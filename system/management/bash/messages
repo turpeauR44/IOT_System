@@ -1,0 +1,19 @@
+#!/bin/bash
+. /home/crown/bash/colors
+
+STOP(){
+echo -e "${stop} STOP : ${neutre} $1"
+}
+PROCEED(){
+echo -e "${processing} PROCEED : ${neutre} $1"
+}
+QUESTION(){
+echo -e "${question} QUESTION : ${neutre} $1"
+}
+STEP(){
+echo -e "${step} STEP $Step: ${neutre} $1"
+}
+RESULT(){
+echo -e "${result} RESULT : ${neutre} $1"
+}
+

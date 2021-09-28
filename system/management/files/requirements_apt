@@ -1,0 +1,8 @@
+git
+sshpass
+python3-pip
+libatlas-base-dev
+postgresql
+sqlite3
+cryptsetup
+pv
