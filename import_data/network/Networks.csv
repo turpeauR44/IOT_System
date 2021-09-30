@@ -1,0 +1,3 @@
+desi;type;system;network;netmask;broadcast
+Principal;eth;Home;192.168.1.254;255.255.255.0;192.168.1.255
+Principal;eth;Crown;5.27.8.52;255.255.255.0;5.27.15.255

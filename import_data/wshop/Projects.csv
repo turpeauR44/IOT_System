@@ -1,0 +1,7 @@
+desi;sh_desc;lg_desc;assignee;master
+MAINTENANCE;Maintenance;;RTU;
+BATIMENT;Bâtiment;;EOL;
+MAINTENANCEORI;Pannes;;RTU;MAINTENANCE
+EHS;Projets EHS;;BRO;
+CONFMACHMAINT;Conformité machines maintenance;;BRO;EHS
+CONFMACHNEW;Conformité machines neuves;;BRO;EHS

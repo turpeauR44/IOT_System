@@ -1,0 +1,76 @@
+val;desc;group;detail
+36;Press;Press;
+10;Downender;Downender;
+11;Coil car;Car;Coil
+12;Coil unwinder;Unwinder;Coil
+131;Leveller;Leveller;
+108;Curler;Curler;
+15;Shear;Shear;
+16;Classifier;Classifier;
+158;Conveyor (sheet-);Conveyor;Sheet
+199;Gauge (thickness-);Gauge;Thickness
+144;Gauge - end control;Gauge;End
+17;Feeder (sheet-);Feeder;Sheet
+7;Packer;Packer;
+8;Vision Inspection unit (end-);Vision system; End inspection unit
+14;Pinhole detector;Pinhole detector;
+71;Key positionner;Key positionner;
+55;Stillage Transfer;Stillage Transfer;
+138;Bundle turner;Bundle turner;
+204;Conveyor (stillage-);Conveyor;Stillage
+254;Pallet Dispenser;Pallet Dispenser;
+34;Wrapper (end-);Wrapper;End
+2;Oven (flat sheet-);Oven;Sheet
+19;Print Deck;Print Deck;
+18;Coater (sheet-);Coater;Sheet
+94;Stacker (sheet-);Stacker;Sheet
+471;Enamel rater;Enamel rater;
+197;Stacker (strip-);Stacker;Strip
+477;Pop and tear gauge;Gauge;Pop and tear
+1;Liner;Liner;
+104;Scroll shear;Scroll shear;
+49;Oxidiser;Oxidiser;
+83;Wicket washer;Wicket washer;
+369;RUBBER ROLLER GRINDER;Grinder;Rubber roller 
+205;Feeder (strip-);Feeder;Strip
+164;Press (double die-);Press;Double die
+157;Conveyor (end-);Conveyor;End
+27;Palletiser;Palletiser;
+181;Elevator (pallet-);Elevator;Pallet
+485;Can height gauge;Gauge;Can height
+476;Score measuring gauge;Gauge;Score measuring
+492;Stripe film weight gauge;Gauge;Stripe film weight
+479;Leak tester;Tester;Leak
+50;Compound drying oven;Oven;Compound drying
+460;Film weight gauge;Gauge;Film weight
+202;Press (single die-);Press;Single die
+198;Conveyor (strip-);Conveyor;Strip
+236;Oven (lining vertical-);Oven;Lining vertical
+271;Conveyor (scrap);Conveyor;Scrap
+188;Oven (post repair-);Oven;Post repair
+40;Press (shell-);Press;Shell
+41;Press (EO conversion-);Press;EO conversion
+68;Accumulator;Accumulator;
+9;Conveyor;Conveyor;
+163;Dosing unit;Dosing unit;
+3;Balancer;Balancer;
+461;Autoclave;Autoclave;
+146;Control system;Control System;
+467;Strip measuring gauge;Gauge;Strip measuring
+507;Pump;Pump;
+147;Compound tank;Tank;
+472;Pressure non return gauge;Gauge;Pressure non return
+475;Offline vision system;Vision system;Offline
+480;Burst pressure gauge;Gauge;Burst pressure
+462;Datapaq;Datapaq;
+490;Microscope;Microscope;
+470;Compound film weight gauge;Gauge;Compound film weight 
+469;Shell dimensions gauge;Gauge;Shell dimensions
+464;Densitometer;Densitometer;
+494;Seam dimensions gauge;Gauge;Seam dimensions
+491;WAM system;WAM;
+101;Sidestripe applicator (int.);Sidestripe applicator;Int
+95;Bagger;Bagger;
+59;Press (multi die-);Press;Multi die
+51;Oven (induction-);Oven;Induction
+241;Conveyor (robotic pallet-);Conveyor;Robotic pallet

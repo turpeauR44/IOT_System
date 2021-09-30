@@ -1,0 +1,10 @@
+controller;equipment;desi;put;type;pin;code;initial;Period_Min;Pulse_Min;Period_Max;Pulse_Max;min;val_min;max;val_max
+rtu001;25044;Entrée 1;in;digital;2;3910;0;100;50;6000;6000;;;;
+rtu001;25044;Four Actif;in;digital;3;3510;0;100;50;6000;6000;;;;
+rtu001;25044;détection peignes entree étuve;in;digital;4;3920;0;100;50;6000;6000;;;;
+rtu001;25044;détection feuilles entree étuve;in;digital;5;3930;0;100;50;6000;6000;;;;
+rtu001;22651;Viscosité Nordcross;in;analog;0;2001;;;;;;0;112;40;1023
+rtu001;22651;Température Nordcross;in;analog;1;2002;;;;;;0;115;150;1023
+rtu002;22637;Came RotoCrabTree;in;digital;4;1001;0;100;50;6000;6000;;;;
+rtu002;22637;Cellule detection;in;digital;5;1007;0;100;50;6000;6000;;;;
+rtu003;25834;Cellule détection déchaineur;in;digital;4;1001;0;100;50;6000;6000;;;;

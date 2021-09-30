@@ -1,0 +1,25 @@
+desi;desc;relates_to
+OPE;Opérations;
+DIR;Direction;OPE
+MAINT;Maintenance;DIR
+LOG;Logistique;DIR
+PROD;Production;DIR
+TECH;Technique;DIR
+RH;Ressources humaines;DIR
+FIN;Finances;DIR
+QUALI;Qualité;DIR
+EHS;Santé Sécurité Environnement;DIR
+ELEC;Electrique;MAINT
+MECA;Mécanique;MAINT
+BATI;Bâtiment;MAINT
+PROJ;Projets;MAINT
+MTD;Multi Die;PROD
+EOLE;Eole;PROD
+DD;Double Die;PROD
+MPC;Metal Process Conditionning;PROD
+VARN;Vernisserie;MPC
+COIL;Bobine;MPC
+MMPC;Maintenance MPC;MECA
+MFON;Maintenance Fonds;MECA
+OUTIL;Maintenance outillage;TECH
+VISION;Vision;TECH

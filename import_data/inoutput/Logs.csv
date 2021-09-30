@@ -1,0 +1,15 @@
+equipment;code;type;subtype
+25044;3910;Status;Value
+25044;3510;Status;Value
+25044;3920;Period;Range
+25044;3920;Pulse;Range
+25044;3930;Period;Full
+25044;3930;Pulse;Full
+22651;2001;Status;Value
+22651;2002;Status;Value
+22637;1001;Period;Range
+22637;1001;Pulse;Range
+22637;1007;Period;Full
+22637;1007;Pulse;Full
+22637;1001;Period;Range
+25834;1001;Pulse;Range

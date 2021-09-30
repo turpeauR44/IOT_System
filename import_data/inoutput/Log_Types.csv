@@ -1,0 +1,12 @@
+type;subtype;io_type;io_put
+Status;Value;digital;in
+Counter;Value;digital;in
+Period;Value;digital;in
+Period;Range;digital;in
+Period;Full;digital;in
+Pulse;Value;digital;in
+Pulse;Range;digital;in
+Pulse;Full;digital;in
+Status;Value;analog;in
+Status;Value;not;not
+Speed;Value;not;not
