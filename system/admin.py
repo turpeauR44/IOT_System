@@ -1,5 +1,5 @@
 from django.contrib import admin
-from hardware.models import *
+from system.models import *
 
 admin.site.site_header = "CROWN Admin"
 admin.site.site_title = "CROWN Admin Portal"
@@ -32,7 +32,6 @@ class SystemModelAdmin(admin.ModelAdmin):
         # Tell Django to populate ManyToMany widgets using a query
         # on the 'other' database.
         return super().formfield_for_manytomany(db_field, request, using=self.using, **kwargs)
-    
 class SystemTabularInline(admin.TabularInline):
     using = 'system'
 
@@ -53,7 +52,7 @@ class SystemTabularInline(admin.TabularInline):
 '''-------------------------	Système		---------------------------'''
 
 '''-------------------------	Network		---------------------------'''
-@admin.register(NM.System)
+@admin.register(System)
 class SystemAdmin (SystemModelAdmin):
 #	class Meta:
 		
@@ -62,24 +61,24 @@ class SystemAdmin (SystemModelAdmin):
 	class NetworkInLine(SystemTabularInline):
 		verbose_name = "Carte réseau"
 		verbose_name_plural = "Cartes réseau"
-		model = NM.Network
+		model = Network
 		show_change_link = True
 		fields=('desi', 'type')
 		extra = 0
 	list_display = ("desi",'environnement', 'activ')
 	inlines = [NetworkInLine, ]
-@admin.register(NM.Network)
+@admin.register(Network)
 class NetworkAdmin (SystemModelAdmin):
 	class Host_NetworkInLine(SystemTabularInline):
 		verbose_name = "addresses réseau"
 		verbose_name_plural = "addresses réseau"
-		model = NM.Host_Network
+		model = Host_Network
 		show_change_link = True
-		fields=('networkcard', ('IPv4','netmask','broadcast'), 'routed_by')	
+		fields=('networkcard', 'IPv4', 'routed_by')	
 		extra = 0
 	list_display = ("system", "desi","type" )
 	inlines = [Host_NetworkInLine, ]	
-@admin.register(NM.Host_Network)
+@admin.register(Host_Network)
 class Host_NetworkAdmin (SystemModelAdmin):
 	list_display=("network","networkcard")
 
@@ -126,28 +125,44 @@ class ImageAdmin (SystemModelAdmin):
 	list_display = ("desi", )
 
 '''-------------------------	Hôte		---------------------------'''
-@admin.register(hostM.Host)
+@admin.register(Host)
 class HostAdmin (SystemModelAdmin):	
 	class GuestInLine(SystemTabularInline):
-		verbose_name="guest"
-		verbose_name_plural="guests"
-		model = hostM.Guest
+		model = Guest
 		show_change_link = True
 		fields=('desi', 'type')
 		extra = 0	
-	list_display = ( "os", 'activ')
+	list_display = ("os", "cpu", 'activ')
 	inlines = [GuestInLine, ]
-@admin.register(hostM.Guest)
-class HostAdmin (SystemModelAdmin):	
+@admin.register(Guest)
+class GuestAdmin (SystemModelAdmin):	
 	class ProcessusInLine(SystemTabularInline):
-		model = hostM.Guest_Processus
+		model = Guest_Processus
 		show_change_link = True
 		fields=('processus', 'activ')
 		extra = 0		
 	list_display = ( "desi", 'host','type')
 	inlines = [ProcessusInLine, ]
-@admin.register(hostM.Processus)
+@admin.register(Processus)
 class ProcessusAdmin (SystemModelAdmin):
 	pass
 
 '''-------------------------	InOutput	---------------------------'''
+@admin.register(Controller)
+class ControllerAdmin (SystemModelAdmin):
+	class IOInLine(SystemTabularInline):
+		model = IO
+		show_change_link = True
+		fields=('desi', 'put', 'type')
+		extra = 0	
+	inlines = [IOInLine, ]
+@admin.register(IO)
+class IOAdmin (SystemModelAdmin):
+	class LogInLine(SystemTabularInline):
+		model = Log
+		show_change_link = True
+		extra = 0
+	inlines = [LogInLine, ]
+@admin.register(Log_Type)
+class LogTypeAdmin (SystemModelAdmin):
+	pass

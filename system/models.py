@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as trad
 from django.contrib.auth.models import User
-
+from wshop.models import Equipment
 '''-------------------------	Système		---------------------------'''
 '''-------------------------	Network		---------------------------'''
 class System (models.Model):
@@ -10,7 +10,9 @@ class System (models.Model):
 	class Meta:
 		db_table			='TAB_SYSTEMS'
 		verbose_name		='System'
-		verbose_name_plural = '_systems'
+		verbose_name_plural = 'Systems'
+		admin_site_details	= {'index':0, 'parent':'Network'}
+		
 	class Environnement(models.TextChoices):
 		DEV 		= 'dev', trad('Développement')
 		PROD 		= 'prod', trad('Production')
@@ -27,15 +29,16 @@ class Network (models.Model):
 	class Meta:
 		db_table			='TAB_NETWORKS'
 		verbose_name 		= "Réseau"
-		verbose_name_plural = "RESEAUX"
+		verbose_name_plural = "Networks"
+		admin_site_details= {'index':0}
 		constraints = [
             models.UniqueConstraint(fields=['desi', 'system'], name = 'Réseau unique')
             ]
 	class Type(models.TextChoices):
 		ETHERNET 		= 'eth', trad('réseau ethernet')
 		WIFI  			= 'wlan', trad('wifi')
-	desi 		= models.CharField(max_length=16)
-	type 		= models.CharField(max_length=4, choices = Type.choices, default = Type.ETHERNET)
+	desi 		= models.CharField('designation',max_length=16)
+	type 		= models.CharField('type',max_length=4, choices = Type.choices, default = Type.ETHERNET)
 	system 		= models.ForeignKey('System', null=True, on_delete=models.CASCADE)
 	network 	= models.GenericIPAddressField(default="255.255.255.0")
 	netmask 	= models.GenericIPAddressField(default="255.255.255.0")
@@ -43,18 +46,6 @@ class Network (models.Model):
 	
 	def __str__(self):
 		return "{} - {}".format(self.system, self.desi)
-class Host_Network (models.Model):
-	class Meta:
-		db_table			='TAB_HOST_NETWORKS'
-		verbose_name 		= "adresse réseau"
-		verbose_name_plural = "_adresses réseau"
-	networkcard	= models.ForeignKey(NetworkCard, on_delete=models.CASCADE)
-	network 	= models.ForeignKey('Network', on_delete=models.CASCADE)
-	IPv4 		= models.GenericIPAddressField(default="0.0.0.0")
-	routed_by	= models.ForeignKey(to=NetworkCard, on_delete=models.CASCADE, null=True, blank=True, related_name="router")
-	
-	def __str__(self):
-		return "{} - {}".format(self.network.system, self.network.desi)
 
 '''-------------------------	Hardware	---------------------------'''
 class CPU (models.Model):
@@ -63,16 +54,15 @@ class CPU (models.Model):
 	class Meta:
 		db_table			='TAB_CPUS'
 		verbose_name 		= "micro-ordinateur"
-		verbose_name_plural = "Processing Unit"
-		 
-	
+		verbose_name_plural = "Processing Units"
+		admin_site_details 	= {'index':1, 'parent':'Host'}
 	class Model(models.TextChoices):
 		PI4_8Go 		= 'pi4_8go', trad('Raspberry Pi 4 - 8Go')
 		PI4_4Go 		= 'pi4_4go', trad('Raspberry Pi 4 - 4Go')
 		PI4_2Go 		= 'pi4_2go', trad('Raspberry Pi 4 - 2Go')
 		PI3_1Go 		= 'pi3_1go', trad('Raspberry Pi 3 model B+ - 1Go')
 		PI0_512Mo 		= 'pi0_512mo', trad('Raspberry Pi 0 - 512Mo')
-	desi		= models.CharField('designation', max_length=12, default="CROWNXXXX", verbose_name='designation')
+	desi		= models.CharField('designation', max_length=12, default="CROWNXXXX")
 	model 		= models.CharField('modèle', max_length=12, choices = Model.choices, default = Model.PI4_4Go)
 	
 	def __str__(self):
@@ -81,7 +71,8 @@ class NetworkCard (models.Model):
 	class Meta:
 		db_table			='TAB_NETWORKCARDS'
 		verbose_name 		= "Carte réseau"
-		verbose_name_plural = "_Cartes réseau"
+		verbose_name_plural = "Cartes réseau"
+		admin_site_details 	= {'index':1, 'parent':'CPU'}
 	class Type(models.TextChoices):
 		ETHERNET 		= 'eth', trad('réseau ethernet')
 		WIFI  			= 'wlan', trad('wifi')
@@ -92,6 +83,19 @@ class NetworkCard (models.Model):
 	
 	def __str__(self):
 		return "{} - {} - {}".format(self.cpu.desi, self.type , self.detail)
+class Host_Network (models.Model):
+	class Meta:
+		db_table			='TAB_HOST_NETWORKS'
+		verbose_name 		= "adresse réseau"
+		verbose_name_plural = "Adresses réseau"
+		admin_site_details 	= {'index':2, 'parent':'Network'}
+	networkcard	= models.ForeignKey(NetworkCard, on_delete=models.CASCADE)
+	network 	= models.ForeignKey('Network', on_delete=models.CASCADE)
+	IPv4 		= models.GenericIPAddressField(default="0.0.0.0")
+	routed_by	= models.ForeignKey(to=NetworkCard, on_delete=models.CASCADE, null=True, blank=True, related_name="router")
+	
+	def __str__(self):
+		return "{} - {}".format(self.network.system, self.network.desi)
 
 '''-------------------------	Software	---------------------------'''
 class OS(models.Model):
@@ -100,7 +104,8 @@ class OS(models.Model):
 	class Meta:
 		db_table			='TAB_SDCARDS'
 		verbose_name 		= "OS"
-		verbose_name_plural = "OS"
+		verbose_name_plural = "Operating System"
+		admin_site_details 	= {'index':2, 'parent':'Host'}
 	class Type(models.TextChoices):
 		WIN 		= 'win', trad('Windows')
 		FULL 		= 'full', trad('Raspbian Buster')
@@ -120,6 +125,7 @@ class OS_User(models.Model):
 		db_table			='TAB_USER_OS'
 		verbose_name 		= "utilisateur OS"
 		verbose_name_plural = "Utilisateurs OS"
+		#admin_site_details 	= {'index':1, 'parent':'OS'}
 	os 			= models.ForeignKey('OS', on_delete=models.CASCADE)
 	user 		= models.ForeignKey(User, on_delete=models.CASCADE)
 	password 	= models.CharField(max_length=512, null=True, blank = True)
@@ -127,7 +133,8 @@ class Software(models.Model):
 	class Meta:
 		db_table			='TAB_SOFTWARES'
 		verbose_name 		= "Logiciel"
-		verbose_name_plural = "_Softwares"
+		verbose_name_plural = "Softwares"
+		admin_site_details 	= {'index':2, 'parent':'OS'}
 	class Installer(models.TextChoices):
 		UNDEFINED	= 'undefined', trad('non-défini')
 		APT 		= 'apt', trad('apt')
@@ -143,6 +150,7 @@ class OS_Software(models.Model):
 		db_table			='TAB_OS_SOFTWARES'
 		verbose_name 		= "Liaison Logiciel OS"
 		verbose_name_plural = "Liaison Logiciels OS"
+		admin_site_details 	= {'index':2, 'parent':'OS'}
 	#configFile 	= models.FileField(null=True, blank=True)
 	software 	= models.ForeignKey('Software', on_delete=models.CASCADE)
 	os 	  		= models.ForeignKey('OS', on_delete=models.CASCADE)
@@ -153,7 +161,8 @@ class Host (models.Model):
 	class Meta:
 		db_table			= 'TAB_HOSTS'
 		verbose_name 		= "Hôte"
-		verbose_name_plural = "HOTES"
+		verbose_name_plural = "Hotes"
+		admin_site_details= {'index':1}
 	os 		= models.ForeignKey(OS, on_delete=models.CASCADE)
 	cpu 	= models.ForeignKey(CPU, on_delete=models.CASCADE)
 	activ	= models.BooleanField(default=False)
@@ -164,7 +173,8 @@ class Guest (models.Model):
 	class Meta:
 		db_table			='TAB_GUESTS'
 		verbose_name 		= "Guest"
-		verbose_name_plural = "_guests"
+		verbose_name_plural = "Guests"
+		admin_site_details 	= {'index':3, 'parent':'Host'}
 	class Type(models.TextChoices):
 		PRODLINE 			= 'p', trad('Ligne de production')
 		EQUIPMENT  			= 'e', trad('Equipement')
@@ -173,11 +183,15 @@ class Guest (models.Model):
 	host 		= models.ForeignKey('Host', on_delete=models.CASCADE)
 	desi 		= models.CharField(max_length=16, unique=True)
 	type 		= models.CharField(max_length=4, choices = Type.choices, default = Type.EQUIPMENT)
+	
+	def __str__(self):
+		return '{} - {}'.format(self.host.cpu, self.Type._value2label_map_[self.type])
 class Guest_Processus (models.Model):
 	class Meta:
 		db_table			='TAB_GUEST_PROCESSUS'
 		verbose_name 		= "Guest Processus"
-		verbose_name_plural = "_guest_Processus"
+		verbose_name_plural = "Guest_Processus"
+		#admin_site_details 	= {'index':1, 'parent':'Guest'}
 	guest 		= models.ForeignKey('Guest', on_delete =models.CASCADE)
 	processus 	= models.ForeignKey('Processus', on_delete =models.CASCADE)
 	activ 		= models.BooleanField(default=False)
@@ -190,7 +204,8 @@ class Processus (models.Model):
 	class Meta:
 		db_table			='TAB_PROCESSUS'
 		verbose_name 		= "Processus"
-		verbose_name_plural = "_processus"
+		verbose_name_plural = "Processus"
+		admin_site_details 	= {'index':1, 'parent':'Guest'}
 	desi 		= models.CharField(max_length=16, unique=True)
 	details 	= models.JSONField(null=True, blank=True)
 	def __str__(self):
@@ -215,22 +230,28 @@ class Controller (models.Model):
 		NANO  			= 'nano', trad('Arduino nano')
 		UNO_GEN  		= 'uno_gen', trad('Generic uno')
 		NANO_GEN  		= 'nano_gen', trad('Generic nano')
+		admin_site_details 	= {'index':2}
 	
 	guest = models.ForeignKey(Guest, on_delete =models.CASCADE)
-	desi = models.CharField(max_length=16, unique = True)
+	desi = models.CharField('desigation', max_length=16, unique = True)
 	board = models.CharField(max_length=16, choices = Board.choices, default = Board.NANO)
 	baud = models.IntegerField(default = 9600)
 	serial = models.CharField(max_length=32, default = "None")
 	period = models.IntegerField(default = 15000)
 	transfer_dur = models.IntegerField(default = 10)
 	nb_pulsmax = models.IntegerField(default = 100)
+	
+	def __str__(self):
+		return "{} - {}".format(self.desi, self.guest)		
 class IO (models.Model):
 	class Meta:
 		db_table='TAB_IOS'
-		verbose_name = "io"
+		verbose_name = "Signal IO"
+		verbose_name_plural = "Signaux (IO)"
 		constraints = [
             models.UniqueConstraint(fields=['controller', 'code'], name = 'unique io_code par controller')
             ]
+		admin_site_details 	= {'index':1, 'parent':'Controller'}
 	class Put(models.TextChoices):
 		IN = 'in'
 		OUT='out'
@@ -241,9 +262,9 @@ class IO (models.Model):
 		NOT='not'
 	controller 	= models.ForeignKey(Controller, on_delete=models.CASCADE)
 	equipment 	= models.ForeignKey(Equipment, null = True, on_delete=models.CASCADE)
-	desi 		= models.CharField(max_length=254)
-	put 		= models.CharField(max_length=16,choices=Put.choices, default=Put.IN)
-	type		= models.CharField(max_length=16,choices=Type.choices, default=Type.DIGITAL)
+	desi 		= models.CharField('designation', max_length=254)
+	put 		= models.CharField('signal', max_length=16,choices=Put.choices, default=Put.IN)
+	type		= models.CharField('type', max_length=16,choices=Type.choices, default=Type.DIGITAL)
 	code 		= models.CharField(max_length=16)
 	pin 		= models.CharField(max_length=16)
 	
@@ -253,6 +274,7 @@ class Digital_IO (models.Model):
 	class Meta:
 		db_table='TAB_DIGITAL_I0S'
 		verbose_name = "signaux digitaux"
+		admin_site_details 	= {'index':1, 'parent':'IO'}
 	initial 	= models.IntegerField(default = 0)
 	Period_Min 	= models.IntegerField(default = 100)
 	Pulse_Min  	= models.IntegerField(default = 100)
@@ -263,6 +285,7 @@ class Analog_IO (models.Model):
 	class Meta:
 		db_table='TAB_ANALOG_I0S'
 		verbose_name = "signaux analogiques"
+		admin_site_details 	= {'index':2, 'parent':'IO'}
 	min = models.IntegerField(default = 0)
 	val_min = models.IntegerField(default = 0)
 	max = models.IntegerField(default = 0)
@@ -272,10 +295,11 @@ class Log_Type(models.Model):
 	class Meta:
 		db_table='TAB_LOG_TYPES'
 		verbose_name = "Type Log"
-		verbose_name_plural = "Type Log"
+		verbose_name_plural = "Log Type"
 		constraints = [
             models.UniqueConstraint(fields=['type', 'subtype', 'io_type'], name = 'unique type subtype et signal')
             ]
+		admin_site_details 	= {'index':2, 'parent':'Controller'}
 	type 		= models.CharField(max_length=16)
 	subtype 	= models.CharField(max_length=16)
 	io_type 	= models.CharField(max_length=16,choices=IO.Type.choices)
@@ -299,4 +323,3 @@ class Log(models.Model):
 	log_type 	= models.ForeignKey('Log_Type', on_delete=models.CASCADE)
 	io			= models.ForeignKey('IO', on_delete=models.CASCADE)
 
-'''-------------------------	WShop	---------------------------'''

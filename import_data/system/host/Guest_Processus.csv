@@ -1,8 +1,8 @@
 host_os;host_cpu;desi;type;processus;activ;period
 21;CROWN3003;pla01;p;pline_status;1;15
 21;CROWN3003;pla02;p;pline_status;1;15
-22;CROWN3002;pla04;p;pline_status;1;15
 22;CROWN3002;pla03;p;pline_status;1;15
-22;CROWN3002;e1234;e;scrut;1;15
+22;CROWN3002;pla04;p;pline_status;1;15
+22;CROWN3002;e25044;e;scrut;1;15
 31;CROWN0001;e22637;e;scrut;1;15
 32;CROWN0002;e22834;e;scrut;1;15

@@ -1,0 +1,76 @@
+id;desc;group;detail
+1;Liner;Liner;
+2;Oven (flat sheet-);Oven;Sheet
+3;Balancer;Balancer;
+7;Packer;Packer;
+8;Vision Inspection unit (end-);Vision system; End inspection unit
+9;Conveyor;Conveyor;
+10;Downender;Downender;
+11;Coil car;Car;Coil
+12;Coil unwinder;Unwinder;Coil
+14;Pinhole detector;Pinhole detector;
+15;Shear;Shear;
+16;Classifier;Classifier;
+17;Feeder (sheet-);Feeder;Sheet
+18;Coater (sheet-);Coater;Sheet
+19;Print Deck;Print Deck;
+27;Palletiser;Palletiser;
+34;Wrapper (end-);Wrapper;End
+36;Press;Press;
+40;Press (shell-);Press;Shell
+41;Press (EO conversion-);Press;EO conversion
+49;Oxidiser;Oxidiser;
+50;Compound drying oven;Oven;Compound drying
+51;Oven (induction-);Oven;Induction
+55;Stillage Transfer;Stillage Transfer;
+59;Press (multi die-);Press;Multi die
+68;Accumulator;Accumulator;
+71;Key positionner;Key positionner;
+83;Wicket washer;Wicket washer;
+94;Stacker (sheet-);Stacker;Sheet
+95;Bagger;Bagger;
+101;Sidestripe applicator (int.);Sidestripe applicator;Int
+104;Scroll shear;Scroll shear;
+108;Curler;Curler;
+131;Leveller;Leveller;
+138;Bundle turner;Bundle turner;
+144;Gauge - end control;Gauge;End
+146;Control system;Control System;
+147;Compound tank;Tank;
+157;Conveyor (end-);Conveyor;End
+158;Conveyor (sheet-);Conveyor;Sheet
+163;Dosing unit;Dosing unit;
+164;Press (double die-);Press;Double die
+181;Elevator (pallet-);Elevator;Pallet
+188;Oven (post repair-);Oven;Post repair
+197;Stacker (strip-);Stacker;Strip
+198;Conveyor (strip-);Conveyor;Strip
+199;Gauge (thickness-);Gauge;Thickness
+202;Press (single die-);Press;Single die
+204;Conveyor (stillage-);Conveyor;Stillage
+205;Feeder (strip-);Feeder;Strip
+236;Oven (lining vertical-);Oven;Lining vertical
+241;Conveyor (robotic pallet-);Conveyor;Robotic pallet
+254;Pallet Dispenser;Pallet Dispenser;
+271;Conveyor (scrap);Conveyor;Scrap
+369;RUBBER ROLLER GRINDER;Grinder;Rubber roller 
+460;Film weight gauge;Gauge;Film weight
+461;Autoclave;Autoclave;
+462;Datapaq;Datapaq;
+464;Densitometer;Densitometer;
+467;Strip measuring gauge;Gauge;Strip measuring
+469;Shell dimensions gauge;Gauge;Shell dimensions
+470;Compound film weight gauge;Gauge;Compound film weight 
+471;Enamel rater;Enamel rater;
+472;Pressure non return gauge;Gauge;Pressure non return
+475;Offline vision system;Vision system;Offline
+476;Score measuring gauge;Gauge;Score measuring
+477;Pop and tear gauge;Gauge;Pop and tear
+479;Leak tester;Tester;Leak
+480;Burst pressure gauge;Gauge;Burst pressure
+485;Can height gauge;Gauge;Can height
+490;Microscope;Microscope;
+491;WAM system;WAM;
+492;Stripe film weight gauge;Gauge;Stripe film weight
+494;Seam dimensions gauge;Gauge;Seam dimensions
+507;Pump;Pump;

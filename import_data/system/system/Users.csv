@@ -1,0 +1,3 @@
+username;password;is_staff;is_superuser
+crown;pbkdf2_sha256$260000$XVdFQ9vYPW2CiNy7fAIVlm$9OJopwruqzBqUpvMypPHaQxZmqcN84+T7ykyu9v5CEo=;1;1
+crown2;pbkdf2_sha256$260000$t6Gtkeu7eOmXv1Um9eYiHS$DVR01ZF9thEtApBNuKAZ7cWt5yA+8uXes8tYkVoL+5A=;1;1

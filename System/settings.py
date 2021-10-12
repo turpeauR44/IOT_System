@@ -31,15 +31,15 @@ ALLOWED_HOSTS = ['localhost', '192.168.1.29', '192.168.1.30','5.27.15.112']
 # Application definition
 
 INSTALLED_APPS = [
+    'wshop.apps.WshopConfig',
+    'system.apps.SystemConfig',
+    'IOT.apps.IotConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'system.apps.SystemConfig',
-    'wshop.apps.WshopConfig',
-    'IOT.apps.IotConfig',
 ]
 
 MIDDLEWARE = [

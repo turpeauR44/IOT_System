@@ -1,4 +1,0 @@
-guest;desi;board;baud;serial;period;transfer_dur;nb_pulsmax
-e1234;rtu001;nano_gen;9600;/dev/ttyUSB0;9600;10000;10;100
-e22637;rtu002;nano_gen;9600;/dev/ttyUSB0;9600;10000;10;100
-e22834;rtu003;nano_gen;9600;/dev/ttyUSB0;9600;10000;10;100

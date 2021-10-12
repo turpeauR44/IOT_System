@@ -1,8 +1,8 @@
 id;hostname;ssh_pub;type
+10;developper;;full
+11;server;;full
 21;wmpc;;full
 22;wmpc2;;full
 23;wmtd;;full
-10;developper;;full
 31;e22637;;lite
 32;e22834;;lite
-11;server;;full

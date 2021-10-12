@@ -18,7 +18,6 @@ Help()
 	echo "This function extract the password from the USB Key and start the ssh-agent of this host"
 	echo
 	echo "Option(s) available(s)"
-	echo "s	By default sda will be tried"
 	echo "h	Print this Help"
 )
 
@@ -28,14 +27,12 @@ Help()
 
 # Options
 ############################
-while getopts "s:h" option; do
+while getopts "h" option; do
 	case $option in
 		
 		h) # display Help
 			Help
 			exit;;
-		s) # Driver selection
-			driver=$OPTARG;;
 		\?) # invalid option
 			echo "Error: Invalid option"
 			exit;;
@@ -44,31 +41,27 @@ done
 
 # Execution
 ############################
-. Initialisation/sql_network.sh
-echo $System_id
 # Close current ext_keys decrypt
 sudo cryptsetup luksClose ext_keys > /dev/null 2>&1
+lsblk | grep sd
+read -p "please provide driver: " driver; echo
 # Request password to user
 read -s -p "please provide USB Key Password: " passw; echo
 #Start driver:
-printf "$passw" | sudo cryptsetup luksOpen /dev/$driver ext_keys > /dev/null 2>&1
-#Mount external drive
-sudo mount -t ext2 -o noatime /dev/mapper/ext_keys /mnt/ext_keys > /dev/null 2>&1
+printf "$passw" | sudo cryptsetup luksOpen /dev/$driver ext_keys  > /dev/null 2>&1
+#Mount driver
+sudo mount /dev/mapper/ext_keys /mnt/ext_keys  > /dev/null 2>&1
 
 #Password generation
 mymdp=$(openssl rand -base64 32)
 sudo mkdir -m 777 -p /mnt/ext_keys/$HOSTNAME/ssh 
-sudo touch /mnt/ext_keys/$HOSTNAME/ssh/.new_ssh_key
-sudo chmod 777 /mnt/ext_keys/$HOSTNAME/ssh/.new_ssh_key
-sudo echo -ne $mymdp > /mnt/ext_keys/$HOSTNAME/ssh/.new_ssh_key
+sudo touch /mnt/ext_keys/$HOSTNAME/ssh/.ssh_key
+sudo chmod 777 /mnt/ext_keys/$HOSTNAME/ssh/.ssh_key
+sudo echo -ne $mymdp > /mnt/ext_keys/$HOSTNAME/ssh/.ssh_key
 
 # Record of the new ssh_key in the crypted drive:
-printf "y" | sudo ssh-keygen -f /mnt/ext_keys/$HOSTNAME/ssh/new_id_rsa -P "$mymdp"
+printf "y" | sudo ssh-keygen -f /mnt/ext_keys/$HOSTNAME/ssh/id_rsa -P "$mymdp"
 
-#Start ssh-agent and add current ssh_key
-old_ssh_key=$(cat /mnt/ext_keys/$HOSTNAME/ssh/.ssh_key)
-eval $(ssh-agent -s)
-{ sleep .1; echo $old_ssh_key; } | script -q /dev/null -c 'ssh-add .ssh/id_rsa'
 
 
 # Add the public key on different hosts connected
@@ -76,5 +69,5 @@ eval $(ssh-agent -s)
 # Remove previous key 
 
 #Umount driver
-#sudo umount /mnt/ext_keys
-#sync
+sudo umount /mnt/ext_keys
+sync

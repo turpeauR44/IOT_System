@@ -1,0 +1,701 @@
+id;model;manufact;condition;status;equitype;owner;process;role;prodline;wshop
+2829;135AP;Continental Can;Scrap/Spares Only;Surplus;1;PROD;;36;;
+2830;G109;Karges-Hammer;Scrap/Spares Only;Surplus;1;PROD;;36;;
+2836;;Karges-Hammer;Fully Functional;Surplus;1;PROD;;36;;
+2837;194;Unknown;Fully Functional;Surplus;1;PROD;;36;;
+2841;;Nordson/Mecatronic;Scrap/Spares Only;Surplus;1;PROD;;101;;
+21580;55;Metalbox;As New;Operational;1;PROD;Ends Multi Die;1;PM50;MTD
+21583;55;Metalbox;Fully Functional;Operational;1;PROD;EOLE;1;PE01;EOLE
+21584;55;Metalbox;Fully Functional;Standalone;1;PROD;;1;;
+21585;55;Metalbox;Fully Functional;Operational;1;PROD;Ends Multi Die;1;PM51;MTD
+21586;55;Metalbox;Fully Functional;Operational;1;PROD;Ends Multi Die;1;PM52;MTD
+21587;55;Metalbox;Fully Functional;Operational;1;PROD;Ends Multi Die;1;PM53;MTD
+21588;55;Metalbox;Fully Functional;Surplus;1;PROD;;1;;
+21597;586;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD25;DD
+21602;586;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD27;DD
+21603;586;IMC;Fully Functional;Surplus;1;PROD;;1;;
+21604;586;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD26;DD
+21606;686;FMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD14;DD
+21634;686;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD15;DD
+21636;686;IMC;Fully Functional;Surplus;1;PROD;;1;;
+21641;686;IMC;Fully Functional;Surplus;1;PROD;;1;;
+21642;686;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD10;DD
+21643;686;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD07;DD
+21644;686;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD19;DD
+21646;686;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD09;DD
+21648;686;IMC;Fully Functional;Surplus;1;PROD;;1;;
+21649;686;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD08;DD
+21650;686;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD20;DD
+21651;686;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD13;DD
+21652;686;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD24;DD
+21653;686;IMC;Fully Functional;Surplus;1;PROD;;1;;
+21654;686;IMC;Fully Functional;Surplus;1;PROD;;1;;
+21655;686;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD11;DD
+21708;M703;Cuomo;Fully Functional;Operational;1;PROD;End Assembly;1;PD28;DD
+21710;55;Metalbox;Fully Functional;Operational;1;PROD;EOLE;1;PE02;EOLE
+21754;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE02;EOLE
+21755;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE01;EOLE
+21756;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE02;EOLE
+21767;18m-1";LTG;Fully Functional;Operational;1;PROD;Coating;2;LA01;MPC
+21768;18m-1";LTG;Fully Functional;Operational;1;PROD;Coating;2;LA02;MPC
+21868;;Carnaud;Fully Functional;Surplus;1;PROD;;17;;
+21898;1645;Carnaud;Scrap/Spares Only;Surplus;1;PROD;;7;;
+21899;1645;Carnaud;Scrap/Spares Only;Surplus;1;PROD;;7;;
+21900;1645;Carnaud;Scrap/Spares Only;Surplus;1;PROD;;7;;
+21905;;(Manual);Fully Functional;Standalone;1;PROD;;7;;
+21906;;(Manual);Fully Functional;Surplus;1;PROD;;7;;
+21907;;(Manual);Fully Functional;Surplus;1;PROD;;7;;
+22009;DO;Jomar;Fully Functional;Operational;1;PROD;End Assembly;34;PD28;DD
+22010;153SD;Jomar;Fully Functional;Operational;1;PROD;End Assembly;34;PDSLVISMAE9&10;
+22011;SD;Jomar;Fully Functional;Surplus;1;PROD;;34;;
+22012;SD;Jomar;Fully Functional;Operational;1;PROD;End Assembly;34;PD25;DD
+22016;1645;Carnaud;Fully Functional;Surplus;1;PROD;;7;;
+22020;1645;Carnaud;Fully Functional;Surplus;1;PROD;;7;;
+22021;1645;Carnaud;Fully Functional;Operational;1;PROD;End Assembly;7;PD22;DD
+22022;1645;Carnaud;Scrap/Spares Only;Surplus;1;PROD;;7;;
+22023;1645;Carnaud;Fully Functional;Surplus;1;PROD;;7;;
+22024;1645;Carnaud;Scrap/Spares Only;Surplus;1;PROD;;7;;
+22025;1645;Carnaud;Fully Functional;Surplus;1;PROD;;7;;
+22026;1645;Carnaud;Fully Functional;Operational;1;PROD;End Assembly;7;PD26;DD
+22027;1645;Carnaud;Fully Functional;Surplus;1;PROD;;7;;
+22028;1645;Carnaud;Scrap/Spares Only;Surplus;1;PROD;;7;;
+22029;1645;Carnaud;Fully Functional;Operational;1;PROD;End Assembly;7;PD11;DD
+22030;1645;Carnaud;Scrap/Spares Only;Surplus;1;PROD;;7;;
+22031;1645;Carnaud;Fully Functional;Surplus;1;PROD;;7;;
+22032;1645;Carnaud;Scrap/Spares Only;Surplus;1;PROD;;7;;
+22033;1645;Carnaud;Fully Functional;Surplus;1;PROD;;7;;
+22036;SD;Jomar;Fully Functional;Operational;1;PROD;End Assembly;34;PD15;DD
+22037;800A1;Dimac;Fully Functional;Operational;1;PROD;Ends Multi Die;34;PM50;MTD
+22038;800A1;Dimac;Fully Functional;Operational;1;PROD;Ends Multi Die;34;PM51;MTD
+22039;800A1;Dimac;Fully Functional;Operational;1;PROD;Ends Multi Die;34;PM52;MTD
+22073;WM2003;Tecnomachinery;Fully Functional;Operational;1;PROD;End Assembly;34;PD24;DD
+22074;WR 2002;Tecnomachinery;Fully Functional;Surplus;1;PROD;;34;;
+22075;WR 2002;Tecnomachinery;Fully Functional;Surplus;1;PROD;;34;;
+22076;WR 2412S;Eurotecnotool;Fully Functional;Surplus;1;PROD;;34;;
+22077;WR 2422S;Eurotecnotool;Fully Functional;Surplus;1;PROD;;34;;
+22117;;EMI;Fully Functional;Surplus;1;PROD;;8;;
+22118;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;End Assembly;8;PD15;DD
+22120;;EMI;Fully Functional;Surplus;1;PROD;;8;;
+22145;CVS 2000;Sacmi;Fully Functional;Surplus;1;PROD;;8;;
+22149;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;End Assembly;8;PD26;DD
+22150;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;End Assembly;8;PDSLVISMAE9&10;
+22151;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;Ends Multi Die;8;PM50;MTD
+22152;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;EOLE;8;PE01;EOLE
+22153;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;EOLE;8;PE04;EOLE
+22154;CVS 2000;Sacmi;Fully Functional;Surplus;1;PROD;;8;;
+22155;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;Ends Multi Die;8;PM53;MTD
+22156;CVS 200;Sacmi;Scrap/Spares Only;Surplus;1;PROD;;8;;
+22157;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;Ends Multi Die;8;PM51;MTD
+22160;CVS100;Sacmi;Fully Functional;Standalone;1;PROD;;8;;
+22246;AT1172;ATIAP;Scrap/Spares Only;Surplus;1;PROD;;9;;
+22250;;Littell;Fully Functional;Operational;1;PROD;Coil Shear;10;CL01;MPC
+22251;;Littell;Fully Functional;Operational;1;PROD;Coil Shear;10;CL02;MPC
+22252;;Littell;Fully Functional;Operational;1;PROD;Coil Shear;10;CL03;MPC
+22262;;Littell;Fully Functional;Operational;1;PROD;Coil Shear;11;CL01;MPC
+22263;;Littell;Fully Functional;Operational;1;PROD;Coil Shear;11;CL02;MPC
+22264;;Littell;Fully Functional;Operational;1;PROD;Coil Shear;11;CL03;MPC
+22275;;Littell;Fully Functional;Operational;1;PROD;Coil Shear;12;CL01;MPC
+22276;;Littell;Fully Functional;Operational;1;PROD;Coil Shear;12;CL02;MPC
+22277;;Littell;Fully Functional;Operational;1;PROD;Coil Shear;12;CL03;MPC
+22288;;Littell;Fully Functional;Operational;1;PROD;Coil Shear;131;CL01;MPC
+22289;;Littell;Fully Functional;Operational;1;PROD;Coil Shear;131;CL02;MPC
+22290;;Littell;Fully Functional;Operational;1;PROD;Coil Shear;131;CL03;MPC
+22302;Sems;Littell;Fully Functional;Operational;1;PROD;Coil Shear;14;CL03;MPC
+22313;BR3;Littell;Fully Functional;Operational;1;PROD;Coil Shear;15;CL03;MPC
+22317;BR4;Littell;Fully Functional;Operational;1;PROD;Coil Shear;15;CL01;MPC
+22319;BR4E;Littell;Fully Functional;Operational;1;PROD;Coil Shear;15;CL02;MPC
+22328;Pile 1;Littell;Fully Functional;Operational;1;PROD;Coil Shear;16;CL01;MPC
+22329;Pile 1;Littell;Fully Functional;Operational;1;PROD;Coil Shear;16;CL02;MPC
+22330;Pile 1;Littell;Fully Functional;Operational;1;PROD;Coil Shear;16;CL03;MPC
+22379;1592;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;17;SC31;
+22380;1592B;Metalbox;Fully Functional;Surplus;1;PROD;;17;;
+22381;1592;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;17;SC33;
+22382;F;Crabtree;Fully Functional;Surplus;1;PROD;;17;;
+22383;1590;Metalbox;Fully Functional;Surplus;1;PROD;;17;;
+22384;TF;Crabtree;Fully Functional;Surplus;1;PROD;;17;;
+22385;;Metalbox;Fully Functional;Surplus;1;PROD;;17;;
+22386;1592;Metalbox;Fully Functional;Surplus;1;PROD;;17;;
+22434;;Unknown;Fully Functional;Operational;1;PROD;Coating;17;LA02;MPC
+22435;;Unknown;Fully Functional;Operational;1;PROD;Coating;17;LA03;MPC
+22444;1580A;Carnaud;Fully Functional;Operational;1;PROD;Coating;17;LA01;MPC
+22445;1580A;Carnaud;Fully Functional;Operational;1;PROD;Coating;17;LA02;MPC
+22459;1582;Carnaud;Fully Functional;Operational;1;PROD;Coating;17;LA03;MPC
+22460;1582;Carnaud;Fully Functional;Operational;1;PROD;Coating;17;LA04;MPC
+22551;MF A3V;Cuomo;Fully Functional;Operational;1;PROD;End Assembly;17;PD28;DD
+22637;45x38;Crabtree;Fully Functional;Operational;1;PROD;Coating;19;LA01;MPC
+22639;45x38;Ratcliff;Fully Functional;Operational;1;PROD;Coating;18;LA01;MPC
+22640;45x38;Ratcliff;Fully Functional;Operational;1;PROD;Coating;18;LA01;MPC
+22647;464;Mailander;Fully Functional;Operational;1;PROD;Coating;18;LA02;MPC
+22651;466;Mailander;Fully Functional;Operational;1;PROD;Coating;18;LA04;MPC
+22652;466;Mailander;Fully Functional;Operational;1;PROD;Coating;18;LA02;MPC
+23058;586;IMC;Fully Functional;Surplus;1;PROD;;1;;
+24699;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;36;PD14;DD
+24700;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;36;PD15;DD
+24704;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;36;PD07;DD
+24705;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;36;PD10;DD
+24706;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;36;PD12;DD
+24707;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;36;PD13;DD
+24709;314;Metalbox;Fully Functional;Surplus;1;PROD;;36;;
+24711;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;36;PD22;DD
+24712;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;36;PD19;DD
+24713;314;Metalbox;Fully Functional;Surplus;1;PROD;;36;;
+24714;314;Metalbox;Fully Functional;Surplus;1;PROD;;36;;
+24715;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;36;PD24;DD
+24716;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;202;PD25;DD
+24717;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;202;PD26;DD
+24718;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;202;PD27;DD
+24719;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;36;PD08;DD
+24720;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;36;PD09;DD
+24721;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;36;PD11;DD
+24761;5P;Latour;Fully Functional;Surplus;1;PROD;;36;;
+24781;P 100;Alfons-Haar;Fully Functional;Operational;1;PROD;Ends Multi Die;36;PM51;MTD
+24782;P100;Alfons-Haar;Fully Functional;Surplus;1;PROD;;36;;
+24783;P100;Alfons-Haar;Fully Functional;Operational;1;PROD;Ends Multi Die;36;PM53;MTD
+24791;PIB 457;Cevolani;Fully Functional;Operational;1;PROD;End Assembly;36;PD28;DD
+24793;PD50;Alfons-Haar;Fully Functional;Operational;1;PROD;Ends Multi Die;36;PM50;MTD
+24895;314;Metalbox;Fully Functional;Operational;1;PROD;EOLE;40;PE01;EOLE
+24896;314;Metalbox;Fully Functional;Surplus;1;PROD;;36;;
+24897;314;Metalbox;Fully Functional;Operational;1;PROD;EOLE;40;PE04;EOLE
+24923;PD 100;Alfons-Haar;Fully Functional;Operational;1;PROD;EOLE;40;PE02;EOLE
+24937;EC 100-QL-3T;Minster;Fully Functional;Operational;1;PROD;EOLE;41;PE04;EOLE
+24946;ECH 125 QL 3T;Minster;Fully Functional;Operational;1;PROD;EOLE;41;PE01;EOLE
+24947;ECH-125 QL-3T;Minster;Fully Functional;Operational;1;PROD;EOLE;41;PE02;EOLE
+25042;33m-1";LTG;Fully Functional;Operational;1;PROD;Coating;2;LA01;MPC
+25043;33m-1";LTG;Fully Functional;Operational;1;PROD;Coating;2;LA02;MPC
+25044;36m-1";LTG;Fully Functional;Operational;1;PROD;Coating;2;LA04;MPC
+25045;36m-1";LTG;Fully Functional;Operational;1;PROD;Coating;2;LA03;MPC
+25054;HD-DUAL-1200;Sardee;Fully Functional;Operational;1;PROD;End Assembly;50;PD25;DD
+25056;6810;O.S.I.;Fully Functional;Operational;1;PROD;End Assembly;50;PD28;DD
+25076;2-2x2-30LE;Bibra;Fully Functional;Operational;1;PROD;End Assembly;50;PD27;DD
+25089;90";Sardee;Fully Functional;Operational;1;PROD;End Assembly;50;PD14;DD
+25090;90";Sardee;Fully Functional;Operational;1;PROD;End Assembly;50;PD15;DD
+25092;HD-DUAL-1200;Sardee;Fully Functional;Operational;1;PROD;End Assembly;50;PD26;DD
+25093;90";Sardee;Fully Functional;Operational;1;PROD;End Assembly;50;PDSLVISMAE9&10;
+25094;90";Sardee;Fully Functional;Surplus;1;PROD;;50;;
+25111;DT 2.1.1.20-LE;Bibra;Fully Functional;Standalone;1;PROD;;50;;
+25112;DT 2.1.1.20-LE;Bibra;Fully Functional;Operational;1;PROD;Ends Multi Die;50;PM51;MTD
+25113;DT 2.1.1.20-LE;Bibra;Fully Functional;Operational;1;PROD;Ends Multi Die;50;PM52;MTD
+25114;DT 2.1.1.20-LE;Bibra;Fully Functional;Operational;1;PROD;Ends Multi Die;50;PM53;MTD
+25115;DT 2.1.1.30 LE;Bibra;Fully Functional;Operational;1;PROD;EOLE;50;PE04;EOLE
+25116;DT 2.1.1.30-LE;Bibra;Fully Functional;Operational;1;PROD;EOLE;50;PE02;EOLE
+25117;DT 2.1.30-LE;Bibra;Fully Functional;Operational;1;PROD;EOLE;50;PE01;EOLE
+25295;4C;ATIAP;As New;Surplus;1;PROD;;3;;
+25296;4C;ATIAP;Fully Functional;Operational;1;PROD;Ends Multi Die;3;PM50;MTD
+25297;6C;ATIAP;Fully Functional;Operational;1;PROD;Ends Multi Die;3;PM51;MTD
+25298;6C;ATIAP;Fully Functional;Operational;1;PROD;Ends Multi Die;3;PM52;MTD
+25299;6C;ATIAP;Fully Functional;Operational;1;PROD;Ends Multi Die;3;PM53;MTD
+25328;;ATIAP;Fully Functional;Operational;1;PROD;EOLE;3;PE02;EOLE
+25329;;ATIAP;Fully Functional;Operational;1;PROD;EOLE;68;PE01;EOLE
+25330;;ATIAP;Fully Functional;Operational;1;PROD;EOLE;68;PE02;EOLE
+25332;;ABC;As New;Surplus;1;PROD;;71;;
+25333;;IX Manu;As New;Surplus;1;PROD;;71;;
+25422;;ATIAP;Fully Functional;Operational;1;PROD;EOLE;9;PE01;EOLE
+25423;;ATIAP;Fully Functional;Operational;1;PROD;EOLE;9;PE02;EOLE
+25545;1592B;Carnaud;Fully Functional;Operational;1;PROD;End Assembly;17;PD25;DD
+25546;1592B;Carnaud;Fully Functional;Operational;1;PROD;End Assembly;17;PD26;DD
+25547;1592B;Carnaud;Fully Functional;Operational;1;PROD;End Assembly;17;PD27;DD
+25553;;Thomassen-Drijver;Fully Functional;Surplus;1;PROD;;205;;
+25555;;Thomassen-Drijver;Fully Functional;Surplus;1;PROD;;205;;
+25638;CG422;Cevolani;Fully Functional;Operational;1;PROD;End Assembly;104;PD27;DD
+25645;200SS;Metalbox;Fully Functional;Surplus;1;PROD;;104;;
+25646;200SS;Metalbox;Fully Functional;Surplus;1;PROD;;104;;
+25647;200SS;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;104;SC31;
+25648;200SS;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;104;SCSL7&8;
+25649;200SS;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;104;SC33;
+25650;200SS;Metalbox;Fully Functional;Surplus;1;PROD;;104;;
+25651;200SS;Metalbox;Fully Functional;Surplus;1;PROD;;104;;
+25652;200SS;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;104;PD22;DD
+25653;200SS;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;104;SCSL9&10;
+25670;34;C.G.;Scrap/Spares Only;Surplus;1;PROD;;104;;
+25671;34;C.G.;Fully Functional;Operational;1;PROD;End Assembly;104;PD25;DD
+25672;34;C.G.;Fully Functional;Operational;1;PROD;End Assembly;104;PD26;DD
+25682;9BSS;Metalbox;Fully Functional;Surplus;1;PROD;;104;;
+25696;BMI-LA-9069A;Carnaud;Fully Functional;Operational;1;PROD;End Assembly;104;PD14;DD
+25697;BMI-LA-9069A;Carnaud;Fully Functional;Operational;1;PROD;End Assembly;104;PD15;DD
+25699;BMI-LA-9069A;Carnaud;Fully Functional;Operational;1;PROD;End Assembly;104;SCSL5&6;
+25700;BMI-LA-9069A;Carnaud;Fully Functional;Operational;1;PROD;EOLE;104;PE01;EOLE
+25709;BMI-LA-9069A;Carnaud;Fully Functional;Operational;1;PROD;EOLE;104;PE04;EOLE
+25743;SC 121;Cuomo;Fully Functional;Operational;1;PROD;End Assembly;104;PD28;DD
+25744;SC 121;Cuomo;Fully Functional;Surplus;1;PROD;;104;;
+25769;;Dexter;Fully Functional;Operational;1;PROD;End Assembly;197;SC31;
+25771;;Dexter;Fully Functional;Operational;1;PROD;End Assembly;197;SC33;
+25772;;Dexter;Fully Functional;Surplus;1;PROD;;197;;
+25773;;Dexter;Fully Functional;Surplus;1;PROD;;197;;
+25774;;Dexter;Fully Functional;Surplus;1;PROD;;197;;
+25775;;Dexter;Fully Functional;Surplus;1;PROD;;197;;
+25833;3004b;Carnaud;Fully Functional;Operational;1;PROD;Coating;94;LA01;MPC
+25834;3004b;Carnaud;Fully Functional;Operational;1;PROD;Coating;94;LA02;MPC
+25837;3004c;Carnaud;Fully Functional;Operational;1;PROD;Coating;94;LA04;MPC
+25838;3004c;Carnaud;Fully Functional;Operational;1;PROD;Coating;94;LA03;MPC
+25933;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;EOLE;108;PE02;EOLE
+25939;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD14;DD
+25940;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD15;DD
+25953;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD07;DD
+25954;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD10;DD
+25955;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD12;DD
+25956;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD13;DD
+25958;5 CA;Metalbox;Fully Functional;Surplus;1;PROD;;108;;
+25960;5CA;Metalbox;Fully Functional;Surplus;1;PROD;;108;;
+25961;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD19;DD
+25962;5CA;Metalbox;Fully Functional;Surplus;1;PROD;;108;;
+25963;5CA;Metalbox;Fully Functional;Surplus;1;PROD;;108;;
+25964;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD24;DD
+25965;5CA;Metalbox;Fully Functional;Operational;1;PROD;EOLE;108;PE01;EOLE
+25966;5CA;Metalbox;Fully Functional;Operational;1;PROD;EOLE;108;PE01;EOLE
+25967;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD08;DD
+25968;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD09;DD
+25969;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD11;DD
+25999;6CA;Metalbox;Fully Functional;Surplus;1;PROD;;108;;
+26000;6CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD25;DD
+26001;6CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD26;DD
+26002;6CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD27;DD
+26005;6CA;Metalbox;Full Overhaul;Surplus;1;PROD;;108;;
+26008;6M;Carnaud;Fully Functional;Surplus;1;PROD;;108;;
+26016;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM50;MTD
+26017;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM51;MTD
+26018;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM52;MTD
+26019;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM53;MTD
+26075;5CA;Metalbox;Fully Functional;Operational;1;PROD;EOLE;108;PE04;EOLE
+26408;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM52;MTD
+26409;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM53;MTD
+26410;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM52;MTD
+26411;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM53;MTD
+26412;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM53;MTD
+26413;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM50;MTD
+26414;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM50;MTD
+26415;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM51;MTD
+26416;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM50;MTD
+26417;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM51;MTD
+26418;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM51;MTD
+26419;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM51;MTD
+26420;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM51;MTD
+26421;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM52;MTD
+26422;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM52;MTD
+26423;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM52;MTD
+26424;55;Metalbox;Fully Functional;Operational;1;PROD;Ends Multi Die;1;PM51;MTD
+26425;55;Metalbox;Fully Functional;Operational;1;PROD;Ends Multi Die;1;PM50;MTD
+26426;55;Metalbox;Fully Functional;Operational;1;PROD;Ends Multi Die;1;PM51;MTD
+26427;55;Metalbox;Fully Functional;Operational;1;PROD;Ends Multi Die;1;PM52;MTD
+26428;55;Metalbox;Fully Functional;Operational;1;PROD;Ends Multi Die;1;PM53;MTD
+26429;55;Metalbox;Fully Functional;Operational;1;PROD;Ends Multi Die;1;PM53;MTD
+26430;55;Metalbox;Fully Functional;Operational;1;PROD;Ends Multi Die;1;PM52;MTD
+26431;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;Ends Multi Die;8;PM51;MTD
+26432;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;EOLE;8;PE02;EOLE
+26433;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;Ends Multi Die;8;PM51;MTD
+26434;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;Ends Multi Die;8;PM52;MTD
+26435;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;Ends Multi Die;8;PM53;MTD
+26436;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;Ends Multi Die;8;PM50;MTD
+26437;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;Ends Multi Die;8;PM52;MTD
+26438;DT 2.1.1.20-LE;Bibra;Fully Functional;Operational;1;PROD;Ends Multi Die;50;PM50;MTD
+26439;DT 2.1.1.20-LE;Bibra;Fully Functional;Operational;1;PROD;Ends Multi Die;50;PM51;MTD
+26440;DT 2.1.1.20-LE;Bibra;Fully Functional;Operational;1;PROD;Ends Multi Die;50;PM52;MTD
+26441;DT 2.1.1.20-LE;Bibra;Fully Functional;Operational;1;PROD;Ends Multi Die;50;PM52;MTD
+26442;DT 2.1.1.20-LE;Bibra;Fully Functional;Operational;1;PROD;Ends Multi Die;50;PM51;MTD
+26443;DT 2.1.1.20-LE;Bibra;Fully Functional;Operational;1;PROD;Ends Multi Die;50;PM53;MTD
+26444;DT 2.1.1.20-LE;Bibra;Fully Functional;Operational;1;PROD;Ends Multi Die;50;PM53;MTD
+26445;800A1;Dimac;Fully Functional;Operational;1;PROD;Ends Multi Die;34;PM51;MTD
+26446;800A1;Dimac;Fully Functional;Operational;1;PROD;Ends Multi Die;34;PM51;MTD
+26447;800A1;Dimac;Fully Functional;Operational;1;PROD;Ends Multi Die;34;PM52;MTD
+26448;800A1;Dimac;Fully Functional;Operational;1;PROD;Ends Multi Die;34;PM52;MTD
+26449;800A1;Dimac;Fully Functional;Operational;1;PROD;Ends Multi Die;34;PM50;MTD
+26450;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM53;MTD
+26451;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;Ends Multi Die;108;PM53;MTD
+26452;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;EOLE;108;PE02;EOLE
+26453;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;EOLE;108;PE02;EOLE
+26454;CUD 520;Cevolani;Fully Functional;Operational;1;PROD;EOLE;108;PE02;EOLE
+26455;1645;Carnaud;Fully Functional;Operational;1;PROD;End Assembly;7;PD23;DD
+26601;WRB 2714 FHS;Eurotecnotool;Fully Functional;Surplus;1;PROD;;34;;
+26602;55;Metalbox;Fully Functional;Operational;1;PROD;EOLE;1;PE02;EOLE
+26603;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE02;EOLE
+26604;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE02;EOLE
+26605;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE02;EOLE
+26606;WEB 2714 FH;Eurotecnotool;Fully Functional;Operational;1;PROD;EOLE;34;PE02;EOLE
+26626;314;Metalbox;Fully Functional;Operational;1;PROD;EOLE;40;PE01;EOLE
+26627;55;Metalbox;Fully Functional;Operational;1;PROD;EOLE;1;PE04;EOLE
+26628;55;Metalbox;Fully Functional;Operational;1;PROD;EOLE;1;PE01;EOLE
+26629;55;Metalbox;Fully Functional;Operational;1;PROD;EOLE;1;PE04;EOLE
+26630;314;Metalbox;Fully Functional;Operational;1;PROD;EOLE;40;PE04;EOLE
+26631;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE01;EOLE
+26632;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE01;EOLE
+26633;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE01;EOLE
+26634;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE04;EOLE
+26635;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE04;EOLE
+26636;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE04;EOLE
+26637;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE01;EOLE
+26638;MRC-450-E;Penalver;Fully Functional;Operational;1;PROD;EOLE;188;PE04;EOLE
+26640;5CA;Metalbox;Fully Functional;Operational;1;PROD;EOLE;108;PE04;EOLE
+26647;;Thomassen-Drijver;Fully Functional;Operational;1;PROD;End Assembly;205;PD06;DD
+26648;01-SA-12;Thomassen-Drijver;Fully Functional;Operational;1;PROD;End Assembly;205;PD05;DD
+26649;314;Metalbox;Fully Functional;Surplus;1;PROD;;36;;
+26650;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;164;PD05;DD
+26651;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;164;PD06;DD
+26652;314;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;164;PD20;DD
+26654;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD05;DD
+26655;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD06;DD
+26656;5CA;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;108;PD20;DD
+26657;5CA;Metalbox;Fully Functional;Surplus;1;PROD;;108;;
+26658;686;FMC;Fully Functional;Surplus;1;PROD;;1;;
+26659;686;IMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD06;DD
+26660;686;FMC;Fully Functional;Operational;1;PROD;End Assembly;1;PD12;DD
+26661;686;FMC;Scrap/Spares Only;Surplus;1;PROD;;1;;
+26662;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;Ends Multi Die;8;PM52;MTD
+26663;CVS001C;Sacmi;Fully Functional;Surplus;1;PROD;;8;;
+26664;CVS001C;Sacmi;Fully Functional;Operational;1;PROD;End Assembly;8;PDSLSorting;
+26665;CVS2000;Sacmi;Fully Functional;Operational;1;PROD;End Assembly;8;PD11;DD
+26666;9BSS;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;104;PD11;DD
+26667;SD;Jomar;Fully Functional;Operational;1;PROD;Ends Multi Die;34;PM53;MTD
+26668;SI;Jomar;Fully Functional;Operational;1;PROD;End Assembly;34;PD27;DD
+26670;1645;Carnaud;Scrap/Spares Only;Surplus;1;PROD;;7;;
+26671;1645;Carnaud;Fully Functional;Surplus;1;PROD;;7;;
+26672;1645;Carnaud;Scrap/Spares Only;Surplus;1;PROD;;7;;
+26673;Sacoba;Fleetwood;Scrap/Spares Only;Surplus;1;PROD;;7;;
+26674;200SS;Metalbox;Fully Functional;Operational;1;PROD;End Assembly;104;SCSL12&13;
+26675;DT 2.1.1.20-LE;Bibra;Fully Functional;Operational;1;PROD;Ends Multi Die;50;PM50;MTD
+26676;SD;Jomar;Fully Functional;Operational;1;PROD;Ends Multi Die;34;PM53;MTD
+26677;;KBA;Fully Functional;Operational;1;PROD;Coating;49;LASL01;
+27092;2-1x1-30 LE;Bibra;Fully Functional;Operational;1;PROD;End Assembly;50;PDSL5&6;DD
+27093;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;End Assembly;8;PD27;DD
+27094;SD;Jomar;Fully Functional;Operational;1;PROD;Ends Multi Die;34;PM53;MTD
+27104;AT 1172;ATIAP;Scrap/Spares Only;Surplus;1;PROD;;9;;
+27105;DT 2.1.30-LE;Bibra;As New;Operational;1;PROD;End Assembly;50;PDSL7&8;DD
+27106;CVS2000;Sacmi;As New;Operational;1;PROD;End Assembly;8;PD14;DD
+27107;DO;Jomar;As New;Operational;1;PROD;End Assembly;34;PDSL7&8;DD
+27117;AT 1172;ATIAP;Scrap/Spares Only;Surplus;1;PROD;;9;;
+27118;DT 2.1.30-LE;Bibra;As New;Operational;1;PROD;End Assembly;50;PDSL12&13;DD
+27119;CVS2000;Sacmi;As New;Operational;1;PROD;End Assembly;8;PDSL19&20;DD
+27120;DO;Jomar;As New;Operational;1;PROD;End Assembly;34;PDSL12&13;DD
+27121;;Crabtree;As New;Surplus;1;PROD;;17;;
+27122;200 SS;Metalbox;As New;Surplus;1;PROD;;104;;
+27124;314;Metalbox;As New;Operational;1;PROD;End Assembly;36;PD23;DD
+27125;5 CA;Metalbox;As New;Surplus;1;PROD;;108;;
+27130;AT 1172;ATIAP;Scrap/Spares Only;Surplus;1;PROD;;9;;
+27131;DT 2.1.30-LE;Bibra;As New;Operational;1;PROD;End Assembly;50;PDSL19&20;DD
+27132;CVS2000;Sacmi;As New;Operational;1;PROD;End Assembly;8;PDSL5&6;DD
+27133;DO;Jomar;As New;Operational;1;PROD;End Assembly;34;PDSL19&20;DD
+28809;VIS-3 for Ends;Ibea;Minor Repair;Surplus;1;PROD;;8;;
+29605;1592;Carnaud;Fully Functional;Operational;1;PROD;End Assembly;17;SCSL5&6;
+29606;2844;Carnaud;Fully Functional;Operational;1;PROD;End Assembly;17;PD11;DD
+29610;TF1695;Crabtree;Fully Functional;Operational;1;PROD;End Assembly;17;SCSL7&8;
+29611;TF1695;Crabtree;Fully Functional;Operational;1;PROD;End Assembly;17;SCSL9&10;
+29612;TF1782;Crabtree;Fully Functional;Operational;1;PROD;End Assembly;17;SCSL12&13;
+29619;TS9/1;Clevertech;Fully Functional;Operational;1;PROD;End Assembly;241;SCSL5&6;
+29620;TS9/2;Clevertech;Fully Functional;Operational;1;PROD;End Assembly;241;SCSL7&8;
+29621;TS9/2;Clevertech;Fully Functional;Operational;1;PROD;End Assembly;241;SCSL12&13;
+29622;;Thomassen-Drijver;Fully Functional;Operational;1;PROD;End Assembly;205;PD07;DD
+29623;;Thomassen-Drijver;Fully Functional;Operational;1;PROD;End Assembly;205;PD08;DD
+29624;;Thomassen-Drijver;Fully Functional;Operational;1;PROD;End Assembly;205;PD09;DD
+29625;;Thomassen-Drijver;Fully Functional;Operational;1;PROD;End Assembly;205;PD10;DD
+29626;;Thomassen-Drijver;Fully Functional;Operational;1;PROD;End Assembly;205;PD12;DD
+29627;;Thomassen-Drijver;Fully Functional;Operational;1;PROD;End Assembly;205;PD13;DD
+29629;;Thomassen-Drijver;Fully Functional;Surplus;1;PROD;;205;;
+29630;;Thomassen-Drijver;Fully Functional;Surplus;1;PROD;;205;;
+29631;;Thomassen-Drijver;Fully Functional;Surplus;1;PROD;;205;;
+29632;;Thomassen-Drijver;Fully Functional;Operational;1;PROD;End Assembly;205;PD19;DD
+29633;;Thomassen-Drijver;Fully Functional;Operational;1;PROD;End Assembly;205;PD20;DD
+29634;;Thomassen-Drijver;Fully Functional;Surplus;1;PROD;;205;;
+29635;;Thomassen-Drijver;Fully Functional;Surplus;1;PROD;;205;;
+29636;;Thomassen-Drijver;Fully Functional;Surplus;1;PROD;;205;;
+29637;;Thomassen-Drijver;Fully Functional;Operational;1;PROD;End Assembly;205;PD24;DD
+30400;466;Mailander;Fully Functional;Operational;1;PROD;Coating;18;LA03;MPC
+32171;Robot L07131;Silvi;Fully Functional;Operational;1;PROD;Ends Multi Die;27;PM53;MTD
+32172;Robot L07131;Silvi;Fully Functional;Operational;1;PROD;Ends Multi Die;27;PM51;MTD
+32173;Robot L07131;Silvi;Fully Functional;Operational;1;PROD;EOLE;27;PE01;EOLE
+32175;Robot L07131;Silvi;Fully Functional;Operational;1;PROD;Ends Multi Die;27;PM52;MTD
+32176;Robot L07131;Silvi;Fully Functional;Operational;1;PROD;Ends Multi Die;27;PM50;MTD
+32425;01-SA-12;Thomassen-Drijver;Fully Functional;Operational;1;PROD;End Assembly;205;PD11;DD
+32426;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;End Assembly;8;PDSL12&13;DD
+32607;SD;Jomar;Fully Functional;Operational;1;PROD;End Assembly;34;PD14;DD
+32619;;Sacmi;Scrap/Spares Only;Surplus;1;PROD;;8;;
+32624;SI;Jomar;Fully Functional;Operational;1;PROD;End Assembly;34;PDSL5&6;DD
+34194;CVS 2000;Sacmi;Fully Functional;Surplus;1;PROD;;8;;
+34228;CVS 2000;Sacmi;Fully Functional;Operational;1;PROD;End Assembly;8;PDSL7&8;DD
+36386;Shuttle;Unknown;Fully Functional;Operational;1;PROD;Coil Shear;55;CLSL01&02;
+40885;Vis-C Ends;Ibea;As New;Surplus;1;PROD;;8;;
+40886;Vis-C Ends;Ibea;As New;Operational;1;PROD;EOLE;8;PE02;EOLE
+42131;;ATIAP;Fully Functional;Operational;1;PROD;EOLE;68;PE04;EOLE
+42132;Vis-C Ends;Ibea;As New;Operational;1;PROD;EOLE;8;PE04;EOLE
+43451;P756;Cuomo;Fully Functional;Operational;1;PROD;End Assembly;108;PD28;DD
+43452;P756;Cuomo;Fully Functional;Operational;1;PROD;End Assembly;108;PD28;DD
+43453;M703;Cuomo;Fully Functional;Operational;1;PROD;End Assembly;1;PD28;DD
+44910;Robot L07131;Silvi;As New;Operational;1;PROD;EOLE;27;PE02;EOLE
+44911;Robot L07131;Silvi;As New;Operational;1;PROD;EOLE;27;PE04;EOLE
+45396;SANO Clav - M-MCS;Other (please specify);Fully Functional;Standalone;4;PROD;;461;;
+45397;EBT - 1000;Kuhnke;Fully Functional;Standalone;4;PROD;;480;;
+45398;End panneling tester;Kuhnke;Fully Functional;Standalone;4;PROD;;472;;
+45399;MK 4-6-3-10;Kuhnke;Fully Functional;Standalone;4;PROD;;471;;
+45400;AER 300;Ovec;Fully Functional;Standalone;4;PROD;;471;;
+45401;Zyglo UV dye penetrant with vacuum table;Unknown;Fully Functional;Standalone;4;PROD;;479;;
+45402;Zyglo UV dye penetrant with vacuum table;Unknown;Fully Functional;Standalone;4;PROD;;479;;
+45403;Zyglo UV dye penetrant with vacuum table;Unknown;Fully Functional;Standalone;4;PROD;;479;;
+45404;SMM - 4;Metop;Fully Functional;Standalone;4;PROD;;476;;
+45407;Nikon - SMZ 2B;Other (please specify);Fully Functional;Standalone;4;PROD;;490;;
+45408;SMM 4;Metop;Fully Functional;Standalone;4;PROD;;476;;
+45409;MK 4-6-3-10;Kuhnke;Fully Functional;Standalone;4;PROD;;471;;
+45410;PAT - 1000;Kuhnke;Fully Functional;Standalone;4;PROD;;477;;
+45411;PAT - 1000;Kuhnke;Fully Functional;Standalone;4;PROD;;477;;
+45412;ZM 370;Mawag;Fully Functional;Standalone;4;PROD;;467;;
+45414;AT 200;Mettler - Toledo;Fully Functional;Standalone;4;PROD;;460;;
+45415;PAT - 1000;Kuhnke;Fully Functional;Standalone;4;PROD;;477;;
+45416;Visionerf;Other (please specify);Fully Functional;Standalone;4;PROD;;475;;
+45417;BP 2105;Sartorius;Fully Functional;Standalone;4;PROD;;470;;
+45418;DIG II;Kuhnke;Fully Functional;Standalone;4;PROD;;471;;
+45419;MK 4-6-3-10;Kuhnke;Fully Functional;Standalone;4;PROD;;471;;
+45420;Bretagnolles;Other (please specify);Fully Functional;Standalone;4;PROD;;469;;
+45421;ZM 370;Mawag;Fully Functional;Standalone;4;PROD;;467;;
+45423;AE 200;Mettler - Toledo;Fully Functional;Standalone;4;PROD;;470;;
+45426;AT 200;Mettler - Toledo;Fully Functional;Standalone;4;PROD;;470;;
+45427;End panneling tester;Kuhnke;Fully Functional;Standalone;4;PROD;;472;;
+45428;MK 4-6-3-10;Kuhnke;Fully Functional;Standalone;4;PROD;;471;;
+45429;QS 4;Weil;Fully Functional;Standalone;4;PROD;;469;;
+45430;QS 4;Weil;Fully Functional;Standalone;4;PROD;;469;;
+45431;AND - HR120;Other (please specify);Fully Functional;Standalone;4;PROD;;470;;
+45433;AT 200;Mettler - Toledo;Fully Functional;Standalone;4;PROD;;470;;
+45434;QS 4;Weil;Fully Functional;Standalone;4;PROD;;469;;
+45435;CP 64;Sartorius;Fully Functional;Standalone;4;PROD;;470;;
+45436;QS 4;Weil;Fully Functional;Standalone;4;PROD;;469;;
+45437;TMI - Orion - PicoVACQ;Other (please specify);Fully Functional;Standalone;4;PROD;;462;;
+45438;Datapaq - TI 0031A;Other (please specify);Fully Functional;Standalone;4;PROD;;462;;
+45439;Nikon - SMZ - 2T;Other (please specify);Fully Functional;Standalone;4;PROD;;490;;
+45441;SI 9500;Sencon;Fully Functional;Standalone;4;PROD;;460;;
+45442;SI 9500;Sencon;Fully Functional;Standalone;4;PROD;;460;;
+45443;SI 9500;Sencon;Fully Functional;Standalone;4;PROD;;460;;
+45444;SI 9500;Sencon;Fully Functional;Standalone;4;PROD;;460;;
+45445;SI 9500;Sencon;Fully Functional;Standalone;4;PROD;;460;;
+45446;SI 9500;Sencon;Fully Functional;Standalone;4;PROD;;460;;
+45447;MK 4-6-3-10;Kuhnke;Fully Functional;Surplus;4;PROD;;471;;
+45448;DIG II;Kuhnke;Fully Functional;Standalone;4;PROD;;471;;
+45449;SANO Clav - M-MCS;Other (please specify);Fully Functional;Standalone;4;PROD;;461;;
+45450;DERII;Peco;Fully Functional;Standalone;4;PROD;;471;;
+45451;DIG II;Kuhnke;Fully Functional;Standalone;4;PROD;;471;;
+45452;X-rite 500 series;Other (please specify);Fully Functional;Standalone;4;PROD;;464;;
+45453;;Unknown;Fully Functional;Standalone;4;PROD;;479;;
+45454;;Unknown;Fully Functional;Standalone;4;PROD;;479;;
+45455;;Unknown;Fully Functional;Standalone;4;PROD;;485;;
+45456;VSM 3;Kuhnke;Fully Functional;Standalone;4;PROD;;494;;
+45457;;Brunel;Fully Functional;Standalone;4;PROD;;491;;
+45458;;Kuhnke;Fully Functional;Standalone;4;PROD;;476;;
+45459;;Kuhnke;Scrap/Spares Only;Surplus;4;PROD;;476;;
+45460;MA AF 200;Sartorius;Scrap/Spares Only;Surplus;4;PROD;;492;;
+46429;CRW2354;Silvi;Fully Functional;Operational;1;PROD;End Assembly;27;PDSL7&8;DD
+46453;WR 2612;Eurotecnotool;Fully Functional;Surplus;1;PROD;;34;;
+46454;CRW2328;Silvi;Fully Functional;Operational;1;PROD;Ends Multi Die;27;PM54;MTD
+46462;314;Metalbox;Full Overhaul;Surplus;1;PROD;;36;;
+46463;5CA;Metalbox;Fully Functional;Surplus;1;PROD;;108;;
+46572;55;Metalbox;Fully Functional;Surplus;1;PROD;;1;;
+47787;VIS-C Ends;Ibea;Fully Functional;Operational;1;PROD;EOLE;8;PE01;EOLE
+47788;VIS-C Ends;Ibea;As New;Operational;1;PROD;EOLE;8;PE01;EOLE
+47969;SANOCLAV AUTO 20L 4BAR;Thermo Fisher Scientific Messtechnik Gmbh;Fully Functional;Standalone;4;PROD;;461;;
+47970;SELECTA PRESOCLAVE-III 50 L;Thermo Fisher Scientific Messtechnik Gmbh;As New;Standalone;4;PROD;;461;;
+48002;Retourneur;Jxxa;Fully Functional;Operational;1;PROD;Coil Shear;138;CLSL01&02;
+48029;ENR-8 (EOLE) 035 201:00;Kuhnke;As New;Standalone;4;PROD;;471;;
+48030;ENR-4-HOLD (EOLE) 035 340:00;Kuhnke;As New;Standalone;4;PROD;;471;;
+48031;ENR-8-HOLD (EOLE) 035 290:00;Kuhnke;As New;Standalone;4;PROD;;471;;
+48032;ENR-8 (NEO) - 035 201:00;Kuhnke;As New;Standalone;4;PROD;;471;;
+48033;ENR-4-HOLD (NEO) 035 340:00;Kuhnke;As New;Standalone;4;PROD;;471;;
+48034;ENR-8 (NEO) - 035 201:00;Kuhnke;As New;Standalone;4;PROD;;471;;
+48035;ENR-8-HOLD (NEO) 035 290:00;Kuhnke;As New;Standalone;4;PROD;;471;;
+48036;ENR-8-HOLD (NEO) 035 290:00;Kuhnke;As New;Standalone;4;PROD;;471;;
+48037;PAT-1000;Kuhnke;As New;Standalone;4;PROD;;477;;
+48038;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;Coil Shear;146;CL01;MPC
+48039;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;Coil Shear;146;CL02;MPC
+48040;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;Coil Shear;146;CL03;MPC
+48041;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;Coating;146;LA01;MPC
+48042;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;Coating;146;LA02;MPC
+48043;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;Coating;146;LA03;MPC
+48044;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;Coating;146;LA04;MPC
+48045;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD05;DD
+48046;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD06;DD
+48047;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD07;DD
+48048;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD08;DD
+48049;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD09;DD
+48050;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD10;DD
+48051;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD11;DD
+48052;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD12;DD
+48053;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD13;DD
+48054;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD14;DD
+48055;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD15;DD
+48056;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD19;DD
+48057;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD20;DD
+48058;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD22;DD
+48059;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD23;DD
+48060;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD24;DD
+48061;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD25;DD
+48062;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD26;DD
+48063;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD27;DD
+48064;scrap chute conveyor;Crown;Fully Functional;Operational;1;PROD;End Assembly;271;PDSLEVD;
+48065;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PD28;DD
+48066;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PDSL12&13;DD
+48067;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PDSL5&6;DD
+48068;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PDSL7&8;DD
+48069;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PDSLVISMAE9&10;
+48070;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;PDSL19&20;DD
+48071;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;SC31;
+48072;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;SC33;
+48073;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;SCSL5&6;
+48074;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;SCSL7&8;
+48075;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;SCSL9&10;
+48076;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;End Assembly;146;SCSL12&13;
+48077;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;EOLE;146;PE01;EOLE
+48078;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;EOLE;146;PE02;EOLE
+48079;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;EOLE;146;PE04;EOLE
+48080;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;Ends Multi Die;146;PM50;MTD
+48081;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;Ends Multi Die;146;PM51;MTD
+48082;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;Ends Multi Die;146;PM52;MTD
+48083;Main Electrical Cabin;Crown;Fully Functional;Operational;1;PROD;Ends Multi Die;146;PM53;MTD
+48084;Aspiration déchets 314;Crown;Fully Functional;Operational;1;PROD;EOLE;271;PESLEVA;
+48085;Aspiration déchets Anneaux;Crown;Fully Functional;Operational;1;PROD;EOLE;271;PESLEVB;
+48086;Robot L07131;Silvi;As New;Operational;1;PROD;End Assembly;27;PD28;DD
+48090;Versatile Gauge;Versatile;Fully Functional;Standalone;4;PROD;;477;;
+48091;Conveying;Crown;Fully Functional;Operational;1;PROD;Coil Shear;158;CL01;MPC
+48092;Conveying;Crown;Fully Functional;Operational;1;PROD;Coil Shear;158;CL02;MPC
+48093;Conveying;Crown;Fully Functional;Operational;1;PROD;Coil Shear;158;CL03;MPC
+48094;Convoyeur entrée;Crown;Fully Functional;Operational;1;PROD;Coil Shear;204;CLSL01&02;
+48095;Centreur Plateaux;Crown;Fully Functional;Operational;1;PROD;Coil Shear;204;CLSL01&02;
+48096;Préhenseur plateaux;Crown;Fully Functional;Operational;1;PROD;Coil Shear;254;CLSL01&02;
+48097;Convoyeur Sortie;Crown;Fully Functional;Operational;1;PROD;Coil Shear;204;CLSL01&02;
+48098;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD05;DD
+48099;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD06;DD
+48100;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD07;DD
+48101;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD08;DD
+48102;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD09;DD
+48103;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD10;DD
+48104;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD11;DD
+48105;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD12;DD
+48106;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD13;DD
+48107;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD14;DD
+48108;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD15;DD
+48109;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD19;DD
+48110;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD20;DD
+48111;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD24;DD
+48112;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD25;DD
+48113;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD26;DD
+48114;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD27;DD
+48115;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PD28;DD
+48116;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PDSL12&13;DD
+48117;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PDSL19&20;DD
+48118;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PDSL5&6;DD
+48119;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PDSL7&8;DD
+48120;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;157;PDSLVISMAE9&10;
+48121;Conveying;ATIAP;Fully Functional;Operational;1;PROD;EOLE;157;PE01;EOLE
+48122;Conveying;ATIAP;Fully Functional;Operational;1;PROD;EOLE;157;PE02;EOLE
+48123;Conveying;ATIAP;Fully Functional;Operational;1;PROD;EOLE;157;PE04;EOLE
+48124;Conveying;ATIAP;Fully Functional;Operational;1;PROD;Ends Multi Die;157;PM50;MTD
+48125;Conveying;ATIAP;Fully Functional;Operational;1;PROD;Ends Multi Die;157;PM51;MTD
+48126;Conveying;ATIAP;Fully Functional;Operational;1;PROD;Ends Multi Die;157;PM52;MTD
+48127;Conveying;ATIAP;Fully Functional;Operational;1;PROD;Ends Multi Die;157;PM53;MTD
+48128;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;198;SC31;
+48129;Conveying;ATIAP;Fully Functional;Operational;1;PROD;End Assembly;198;SC33;
+48130;Quality Line Control;Crown;Fully Functional;Operational;1;PROD;Coating;144;LA01;MPC
+48131;Quality Line Control;Crown;Fully Functional;Operational;1;PROD;Coating;144;LA02;MPC
+48132;Quality line Control;Crown;Fully Functional;Operational;1;PROD;Coating;144;LA03;MPC
+48133;Quality line Control;Crown;Fully Functional;Operational;1;PROD;Coating;144;LA04;MPC
+48138;Pallet Elevator ATLAS;Other (please specify);Fully Functional;Operational;1;PROD;End Assembly;181;PD11;DD
+48139;Pallet Elevator ATLAS;Other (please specify);Fully Functional;Operational;1;PROD;End Assembly;181;PD14;DD
+48140;Pallet Elevator ATLAS;Other (please specify);Fully Functional;Operational;1;PROD;End Assembly;181;PD15;DD
+48141;Pallet Elevator ATLAS;Other (please specify);Fully Functional;Operational;1;PROD;End Assembly;181;PD24;DD
+48142;Pallet Elevator ATLAS;Other (please specify);Fully Functional;Operational;1;PROD;End Assembly;181;PD25;DD
+48143;Pallet Elevator HYMECA;Other (please specify);Fully Functional;Operational;1;PROD;End Assembly;181;PD26;DD
+48144;Pallet Elevator ATLAS;Other (please specify);Fully Functional;Operational;1;PROD;End Assembly;181;PD27;DD
+48145;Pallet Elevator ATLAS;Other (please specify);Fully Functional;Operational;1;PROD;End Assembly;181;PDSL12&13;DD
+48146;Pallet Elevator ATLAS;Other (please specify);Fully Functional;Operational;1;PROD;End Assembly;181;PDSL19&20;DD
+48147;Pallet Elevator ATLAS;Other (please specify);Fully Functional;Operational;1;PROD;End Assembly;181;PDSL5&6;DD
+48148;Pallet Elevator ATLAS;Other (please specify);Fully Functional;Operational;1;PROD;End Assembly;181;PDSL7&8;DD
+48149;Pallet Elevator ATLAS;Other (please specify);Fully Functional;Operational;1;PROD;End Assembly;181;PDSLVISMAE9&10;
+48162;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD05;DD
+48163;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD06;DD
+48164;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD07;DD
+48165;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD08;DD
+48166;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD09;DD
+48167;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD10;DD
+48168;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD11;DD
+48169;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD12;DD
+48170;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD13;DD
+48171;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD14;DD
+48172;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD15;DD
+48173;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD19;DD
+48192;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD20;DD
+48193;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD24;DD
+48194;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD25;DD
+48195;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD26;DD
+48196;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD27;DD
+48197;Quality line control;Crown;Fully Functional;Operational;1;PROD;End Assembly;144;PD28;DD
+48198;Quality line control;Crown;Fully Functional;Operational;1;PROD;EOLE;144;PE01;EOLE
+48199;Quality line control;Crown;Fully Functional;Operational;1;PROD;EOLE;144;PE02;EOLE
+48200;Quality line control;Crown;Fully Functional;Operational;1;PROD;EOLE;144;PE04;EOLE
+48201;Quality line control;Crown;Fully Functional;Operational;1;PROD;Ends Multi Die;144;PM50;MTD
+48202;Quality line control;Crown;Fully Functional;Operational;1;PROD;Ends Multi Die;144;PM51;MTD
+48203;Quality line control;Crown;Fully Functional;Operational;1;PROD;Ends Multi Die;144;PM52;MTD
+48204;Quality line control;Crown;Fully Functional;Operational;1;PROD;Ends Multi Die;144;PM53;MTD
+48214;Central Compound dispenser;Grace;Fully Functional;Standalone;1;PROD;;147;;
+48215;Post-repair lacquer dispenser circuit;Graco;Fully Functional;Operational;1;PROD;EOLE;507;PESLCDV;
+48217;Promix 2KE;Graco;Fully Functional;Operational;1;PROD;EOLE;163;PE02;EOLE
+48218;Promix 2KE;Graco;Fully Functional;Operational;1;PROD;EOLE;163;PE01;EOLE
+48219;Promix 2KE;Graco;Fully Functional;Operational;1;PROD;EOLE;163;PE04;EOLE
+48248;Circuit distribution PRS;Graco;Fully Functional;Operational;1;PROD;EOLE;507;PESLCDV;
+48249;Navette bandes;Cuomo;Fully Functional;Operational;1;PROD;End Assembly;198;PD28;DD
+48254;PLC line;Crown;Fully Functional;Operational;1;PROD;Coil Shear;146;CLSL01&02;
+48255;Thickness gauge;Littell;Fully Functional;Operational;1;PROD;Coil Shear;199;CL01;MPC
+48256;Thickness gauge;Vollmer;Fully Functional;Operational;1;PROD;Coil Shear;199;CL02;MPC
+48257;Thickness Gauge;Vollmer;Fully Functional;Operational;1;PROD;Coil Shear;199;CL03;MPC
+48258;Quality Line Control;Crown;Fully Functional;Operational;1;PROD;Coil Shear;144;CL01;MPC
+48259;Quality Line Control;Crown;Fully Functional;Operational;1;PROD;Coil Shear;144;CL02;MPC
+48260;Quality Line Control;Crown;Fully Functional;Operational;1;PROD;Coil Shear;144;CL03;MPC
+49266;Pile 2;Littell;Fully Functional;Operational;1;PROD;Coil Shear;16;CL02;MPC
+49267;Pile 3;Littell;Fully Functional;Operational;1;PROD;Coil Shear;16;CL02;MPC
+49268;Pile 4;Littell;Fully Functional;Operational;1;PROD;Coil Shear;16;CL02;MPC
+49269;Pile 2;Littell;Fully Functional;Operational;1;PROD;Coil Shear;16;CL01;MPC
+49270;Pile 3;Littell;Fully Functional;Operational;1;PROD;Coil Shear;16;CL01;MPC
+49271;Pile 4;Littell;Fully Functional;Operational;1;PROD;Coil Shear;16;CL01;MPC
+49272;Pile 2;Littell;Fully Functional;Operational;1;PROD;Coil Shear;16;CL03;MPC
+49273;Pile 3;Littell;Fully Functional;Operational;1;PROD;Coil Shear;16;CL03;MPC
+49274;Pile 4;Littell;Fully Functional;Operational;1;PROD;Coil Shear;16;CL03;MPC
+49306;Retourneur Hors Ligne;LTG;Fully Functional;Operational;1;PROD;Coil Shear;138;CLSL03;
+49307;Retourneur Hors Ligne;LTG;Fully Functional;Operational;1;PROD;Coating;138;LASL02;
+49308;rampe lavage peignes 1;Crown;Fully Functional;Operational;1;PROD;Coating;83;LASL02;
+49309;rampe lavage peignes 2;Crown;Fully Functional;Operational;1;PROD;Coating;83;LASL02;
+49310;rampe lavage peignes 3;Crown;Fully Functional;Operational;1;PROD;Coating;83;LASL02;
+49311;ERNAULT Batignolles;Other (please specify);Fully Functional;Operational;1;PROD;Coating;369;LASL02;
+49312;ERNAULT SOMUA 550;Other (please specify);Fully Functional;Operational;1;PROD;Coating;369;LASL02;
+49343;ULTRA-CVIS;Ibea;As New;Operational;1;PROD;Ends Multi Die;8;PM53;MTD
+49344;ULTRA-CVIS;Ibea;As New;Operational;1;PROD;Ends Multi Die;8;PM53;MTD
+49345;ULTRA-CVIS;Ibea;As New;Operational;1;PROD;Ends Multi Die;8;PM53;MTD
+49346;ULTRA-CVIS;Ibea;As New;Operational;1;PROD;Ends Multi Die;8;PM53;MTD
+49347;ULTRA-CVIS;Ibea;As New;Operational;1;PROD;Ends Multi Die;8;PM53;MTD
+49348;ULTRA-CVIS;Ibea;As New;Operational;1;PROD;Ends Multi Die;8;PM53;MTD
+49397;PST-1000SF;Naroska;As New;Operational;1;PROD;Ends Multi Die;59;PM54;MTD
+49398;MTD60-165;OMPI;As New;Operational;1;PROD;Ends Multi Die;1;PM54;MTD
+49399;MTD60-165;OMPI;As New;Operational;1;PROD;Ends Multi Die;1;PM54;MTD
+49400;I-DRY-4D-S1;Nordson;As New;Operational;1;PROD;Ends Multi Die;51;PM54;MTD
+49401;UC-VIS B;Ibea;As New;Operational;1;PROD;Ends Multi Die;8;PM54;MTD
+49402;UC-VIS B;Ibea;As New;Operational;1;PROD;Ends Multi Die;8;PM54;MTD
+49403;UC-VIS B;Ibea;As New;Operational;1;PROD;Ends Multi Die;8;PM54;MTD
+49404;UC-VIS B;Ibea;As New;Operational;1;PROD;Ends Multi Die;8;PM54;MTD
+49405;M15-02-0039;Autorema;As New;Operational;1;PROD;Ends Multi Die;95;PM54;MTD
+49406;CRW2328;Silvi;As New;Surplus;1;PROD;;27;;
+49455;SI9600;Sencon;As New;Standalone;4;PROD;;460;;
+49456;SI9600;Sencon;As New;Standalone;4;PROD;;460;;
+50568;CSM-10;EDS;Fully Functional;Operational;1;PROD;Coil Shear;14;CL02;MPC
+50569;CSM-10;EDS;As New;Operational;1;PROD;Coil Shear;14;CL01;MPC
+50574;VIS-C Ends;Ibea;As New;Operational;1;PROD;EOLE;8;PE02;EOLE
+51615;SAR2;Naroska;As New;Operational;1;PROD;Ends Multi Die;108;PM54;MTD
+51616;SAR2;Naroska;Full Overhaul;Operational;1;PROD;Ends Multi Die;108;PM54;MTD
+51617;TB;Naroska;As New;Operational;1;PROD;Ends Multi Die;3;PM54;MTD
+51618;M15-02-0040;Autorema;As New;Operational;1;PROD;Ends Multi Die;95;PM53;MTD
+51619;Conveying;Unknown;As New;Operational;1;PROD;Ends Multi Die;157;PM54;MTD
+51620;Line Electrical cabin;Crown;As New;Operational;1;PROD;Ends Multi Die;146;PM54;MTD
+51621;QUality Line Control;Crown;As New;Operational;1;PROD;Ends Multi Die;144;PM54;MTD
+51622;C-VIS BIG;Ibea;As New;Operational;1;PROD;End Assembly;8;PD25;DD
+51623;CRW2354;Silvi;As New;Surplus;1;PROD;;27;;
+51750;;Crown;Fully Functional;Operational;1;PROD;End Assembly;108;PD22;DD
+51751;;Crown;Fully Functional;Operational;1;PROD;End Assembly;108;PD22;DD
+51752;;Crown;Fully Functional;Operational;1;PROD;End Assembly;108;PD23;DD
+51753;;Crown;Fully Functional;Operational;1;PROD;End Assembly;108;PD23;DD
+51754;DL500;Matriruiz;Fully Functional;Operational;1;PROD;End Assembly;1;PDSL22&23;DD
+51755;DL500;Matriruiz;Fully Functional;Operational;1;PROD;End Assembly;1;PDSL22&23;DD
+51756;MRD-200;OMPI;Fully Functional;Operational;1;PROD;End Assembly;236;PDSL22&23;DD
+51976;C VIS BIG;Ibea;Fully Functional;Operational;1;PROD;End Assembly;8;PD28;DD
+51977;CRW2535;Silvi;Fully Functional;Operational;1;PROD;End Assembly;27;PD27;DD
+51978;TS14;Clevertech;Fully Functional;Operational;1;PROD;EOLE;34;PE01;EOLE
+51979;TS14;Clevertech;Fully Functional;Operational;1;PROD;EOLE;34;PE04;EOLE
+51980;P125;Alfons-Haar;Fully Functional;Operational;1;PROD;Ends Multi Die;36;PM52;MTD
+51981;Cube;Ibea;Fully Functional;Operational;1;PROD;EOLE;8;PE04;EOLE

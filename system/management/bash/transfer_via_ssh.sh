@@ -48,4 +48,5 @@ elif [ $myfile == "sysctl.conf" ];then
 	sudo sshpass -p $password ssh $myuser@$IP_addr "sudo chown -R crown /etc/sysctl.conf"
 	sudo sshpass -p $password scp -r $local_path $myuser@$IP_addr:/etc/sysctl.conf
 fi
+sleep 2
 exit 1

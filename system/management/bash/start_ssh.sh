@@ -19,7 +19,7 @@ Help()
 	echo "This function extract the password from the USB Key and start the ssh-agent of this host"
 	echo
 	echo "Option(s) available(s)"
-	echo "s	By default sda will be tried"
+	echo "e	exit requested"
 	echo "h	Print this Help"
 )
 
@@ -29,14 +29,15 @@ Help()
 
 # Options
 ############################
-while getopts "s:h" option; do
+exit_requested=0
+while getopts "eh" option; do
 	case $option in
 		
 		h) # display Help
 			Help
 			exit;;
-		s) # Driver selection
-			driver=$OPTARG;;
+		e) # with exit
+			exit_requested=1;;
 		\?) # invalid option
 			echo "Error: Invalid option"
 			exit;;
@@ -59,7 +60,7 @@ printf "$passw" | sudo cryptsetup luksOpen /dev/$driver ext_keys  > /dev/null 2>
 #Mount driver
 sudo mount /dev/mapper/ext_keys /mnt/ext_keys  > /dev/null 2>&1
 #Extract ssh_key
-ssh_key=$(cat /mnt/ext_keys/$HOSTNAME/.ssh_key )
+ssh_key=$(cat /mnt/ext_keys/$HOSTNAME/ssh/.ssh_key )
 #Umount driver
 sudo umount /mnt/ext_keys
 sync
@@ -67,6 +68,7 @@ sync
 eval $(ssh-agent -s)  > /dev/null 2>&1
 { sleep .1; echo $ssh_key; } | script -q /dev/null -c 'ssh-add .ssh/id_rsa' > /dev/null 2>&1
 id_add=$(ssh-add -l | grep SHA256 | grep "$HOSTNAME")
-if [ -n "$id_add" ]; then exit 0 ; fi
 
-exit 1
+if [ $exit_requested -eq 1 ]; then
+	if [ -n "$id_add" ]; then exit 0 ; else exit 1; fi
+fi

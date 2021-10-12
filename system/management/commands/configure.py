@@ -9,14 +9,11 @@ import time
 	#	Django
 from django.core.management.base import BaseCommand, CommandError
 
-	#	Projet
-from network.models import *
-from software.models import *
-from hardware.models import *
-from host.models import *
+	#	Projet		
+from system.models import *
 from system.management.functions.txts import *
 
-Path		= "/home/crown/System/system/management"
+Path		= "{}/system/management".format(sys.path[0])
 Path_files 	= "{}/files".format(Path)
 Path_bash 	= "{}/bash".format(Path)
 
@@ -27,15 +24,19 @@ local_files_toexecute=[	'check_internet.sh',
 						'send_ssh_key.sh',
 						'transfer_via_ssh.sh',
 						'add_line.sh',]
-local_files_totransfer=['pg_hba.conf',
-						'postgresql.conf',
-						'rc.local',]
-local_files_totransfer_bridge =['hostapd.conf',
-								'hostapd',
-								'hostapd.accept',
-								'interfaces',
-								'sysctl.conf',]
-						
+local_files_totransfer=[{'file':'pg_hba.conf', 		'target':'/etc/postgresql/11/main',	'owner_change':'file', 	'functions':['system']},
+						{'file':'postgresql.conf', 	'target':'/etc/postgresql/11/main',	'owner_change':'file', 	'functions':['system']},
+						{'file':'rc.local', 		'target':'/etc',					'owner_change':'file', 	'functions':['system']},
+						{'file':'hostapd.conf', 	'target':'/etc/hostapd',			'owner_change':'dir', 	'functions':['system','bridge']},
+						{'file':'hostapd', 			'target':'/etc/default',			'owner_change':'file', 	'functions':['system','bridge']},
+						{'file':'hostapd.accept', 	'target':'/etc/hostapd',			'owner_change':'dir', 	'functions':['system','bridge']},
+						{'file':'interfaces', 		'target':'/etc/network',			'owner_change':'file', 	'functions':['system','bridge']},
+						{'file':'sysctl.conf', 		'target':'/etc',					'owner_change':'file', 	'functions':['system','bridge']},]
+services_torestart=[{'service':'postgresql',	'enable':False,	'functions':['system']},
+					{'service':'hostapd',		'enable':False, 'functions':['system','bridge']},
+					{'service':'dncpd',			'enable':False, 'functions':['system','bridge']},
+					]
+
 Target={"method":0,
 		"os":None,"host":None,"cpu":None,"bridge":None,"system":None,'network':None,
 		'cur_cpu':None,'cur_host_net':None, 
@@ -74,7 +75,7 @@ class Command(BaseCommand):
 		if Processus_OK: Processus_OK = step_proceed(get_target,"Contrôle des détails de la cible",2, **options)
 		if Processus_OK and not options['no_down']: Processus_OK = step_proceed(net_downloads,"Téléchargement des paquets nécessaires",3, **options)
 		if Processus_OK: Processus_OK = step_proceed(ssh_configuration,"Configuration du ssh",5, **options)
-		if Processus_OK: Processus_OK = step_proceed(files_transfert,"Transfert des fichiers de configuration",4, **options)			
+		if Processus_OK: Processus_OK = step_proceed(files_transfert,"Transfert des fichiers de configuration",6, **options)			
 		#if Processus_OK: Processus_OK = step_proceed(git_pull,"Git Pull",6, **options)
 
 def step_proceed(function, title, step, **options):
@@ -98,7 +99,7 @@ def initialization(**options):
 			return False
 	def sshkey_activation():		
 		txt_Proceed("activation de la clé ssh via clef cryptée")
-		stdexit = subprocess.call(['{}/start_ssh.sh'.format(Path_bash)])
+		stdexit = subprocess.call(['{}/start_ssh.sh'.format(Path_bash), '-e'])
 		if not stdexit :
 			txt_OK()
 			return True
@@ -132,25 +133,21 @@ def initialization(**options):
 	if Step_OK and not options['no_update']: Step_OK= pull_git()
 	return Step_OK
 	
-def files_transfert(**options):
-			
+def files_transfert(**options):		
 	def copy_sav():
 		txt_Proceed('local copy of files')
 		step_ok = True
-		for myfile in local_files_totransfer:
-			if step_ok: step_ok = subprocess.run(['sudo', 'cp', '{}/{}.sav'.format(Path_files,myfile), '{}/{}'.format(Path_files,myfile)])
-			if step_ok: step_ok = subprocess.run(['sudo', 'chmod', '777', '{}/{}'.format(Path_files,myfile)])
-		if Target['bridge']:
-			for myfile in local_files_totransfer_bridge:
-				if step_ok: step_ok = subprocess.run(['sudo', 'cp', '{}/{}.sav'.format(Path_files,myfile), '{}/{}'.format(Path_files,myfile)])
-				if step_ok: step_ok = subprocess.run(['sudo', 'chmod', '777', '{}/{}'.format(Path_files,myfile)])
-		if step_ok: 
-			txt_OK()
-			return True
-		else:
-			txt_NOK()
-			return False
-	
+		
+		for funct in List_to_transfer:
+			for myfile in local_files_totransfer:
+				if funct in myfile['functions']:
+					if step_ok: step_ok = subprocess.run(['sudo', 'cp', '{}/{}.sav'.format(Path_files,myfile['file']), '{}/{}'.format(Path_files,myfile['file'])])
+					if step_ok: step_ok = subprocess.run(['sudo', 'chmod', '777', '{}/{}'.format(Path_files,myfile['file'])])
+					if not step_ok: 
+						txt_NOK(myfile['file'])
+						return False
+		txt_OK()
+		return True
 	def hostapd_conf():
 		txt_Proceed("update hostapd config")
 		hostapd_conf_add=[	"ssid={}".format(str.capitalize(Target['os'].hostname)),
@@ -181,28 +178,37 @@ def files_transfert(**options):
 		else:
 			txt_NOK
 			return False
-	
 	def files_transfer():
 		txt_Proceed("files transfer")
-		step_ok = True
-		for myfile in local_files_totransfer:
-			if step_ok: step_ok = subprocess.call(['{}/transfer_via_ssh.sh'.format(Path_bash), '{}'.format(Target['ipv4']) , '{}'.format(Target['user'].username), '{}'.format(Target['password']), '{}'.format(myfile)])
-		if Target['bridge']:
-			for myfile in local_files_totransfer_bridge:
-				if step_ok: step_ok = subprocess.call(['{}/transfer_via_ssh.sh'.format(Path_bash), '{}'.format(Target['ipv4']) , '{}'.format(Target['user'].username), '{}'.format(Target['password']), '{}'.format(myfile)])
-		if step_ok: 
-			txt_OK()
-			return True
-		else:
-			txt_NOK()
-			return False
-		
-	def copy_remove():
-		txt_Proceed('remove copy')
-		for myfile in local_files_totransfer + local_files_totransfer_bridge:
-			subprocess.run(['sudo', 'rm', '{}/{}'.format(Path_files,myfile)])
+		for funct in List_to_transfer:
+			for myfile in local_files_totransfer:
+				if funct in myfile['functions']:
+					try:
+						if myfile['owner_change']=='file' : 
+							stdin, stdout, stderr = Target['ssh'].Client.exec_command("sudo chown -R {} {}/{}".format(Target['user'].username,myfile['target'],myfile['file']))
+						elif myfile['owner_change']=='dir': 
+							stdin, stdout, stderr = Target['ssh'].Client.exec_command("sudo chown -R {} {}".format(Target['user'].username,myfile['target']))
+						stdout.channel.recv_exit_status()
+						print(myfile['file'])
+						Target['ssh'].ftp_Client.put('{}/{}'.format(Path_files,myfile['file']),'{}/{}'.format(myfile['target'],myfile['file']))
+						print(myfile['file'])
+					except:
+						txt_NOK(myfile['file'])
+						return False
 		txt_OK()
 		return True
+	def copy_remove():
+		txt_Proceed('remove copy')
+		
+		for funct in List_to_transfer:
+			for myfile in local_files_totransfer:
+				if funct in myfile['functions']:
+					subprocess.run(['sudo', 'rm', '{}/{}'.format(Path_files,myfile)])
+		txt_OK()
+		return True
+	
+	List_to_transfer=['system']
+	if Target['bridge']: List_to_transfer.append('bridge')
 	
 	Step_OK=True
 	if Step_OK : Step_OK = copy_sav()
@@ -253,12 +259,13 @@ def ssh_configuration(**options):
 		txt_Proceed("ssh_keys authorized update")
 		stdin, stdout, stderr = Target['ssh'].Client.exec_command("touch .ssh/authorized_keys")
 		stdout.channel.recv_exit_status()
-		if subprocess.call(['{}/send_ssh_key.sh'.format(Path_bash), '{}'.format(Target['ipv4']) , '{}'.format(Target['user'].username), '{}'.format(Target['password'])]):
-			txt_NOK()
-			return False
-		else:
+		try:
+			Target['ssh'].ftp_Client.put('.ssh/id_rsa.pub','.ssh/authorized_keys')
 			txt_OK()
 			return True
+		except:
+			txt_NOK()
+			return False
 		
 	def ssh_management():
 		txt_Proceed("Management du ssh")
@@ -345,6 +352,7 @@ def get_target(**options):
 									look_for_keys = False, 
 									allow_agent = False,
 									timeout = 3)
+				self.ftp_Client=self.Client.open_sftp()
 				self.ok = True
 			except: self.ok = False
 	def check_os_exist():
