@@ -12,7 +12,7 @@ from django.core.management.base import BaseCommand, CommandError
 	#	Projet		
 from system.models import *
 from system.management.functions.txts import *
-
+root_path = '/'.join(sys.path[0].split('/')[:3])
 Path		= "{}/system/management".format(sys.path[0])
 Path_files 	= "{}/files".format(Path)
 Path_bash 	= "{}/bash".format(Path)
@@ -24,21 +24,23 @@ local_files_toexecute=[	'check_internet.sh',
 						'send_ssh_key.sh',
 						'transfer_via_ssh.sh',
 						'add_line.sh',]
-local_files_totransfer=[{'file':'pg_hba.conf', 		'target':'/etc/postgresql/11/main',	'owner_change':'file', 	'functions':['system']},
-						{'file':'postgresql.conf', 	'target':'/etc/postgresql/11/main',	'owner_change':'file', 	'functions':['system']},
-						{'file':'rc.local', 		'target':'/etc',					'owner_change':'file', 	'functions':['system']},
-						{'file':'hostapd.conf', 	'target':'/etc/hostapd',			'owner_change':'dir', 	'functions':['system','bridge']},
-						{'file':'hostapd', 			'target':'/etc/default',			'owner_change':'file', 	'functions':['system','bridge']},
-						{'file':'hostapd.accept', 	'target':'/etc/hostapd',			'owner_change':'dir', 	'functions':['system','bridge']},
-						{'file':'interfaces', 		'target':'/etc/network',			'owner_change':'file', 	'functions':['system','bridge']},
-						{'file':'sysctl.conf', 		'target':'/etc',					'owner_change':'file', 	'functions':['system','bridge']},]
-services_torestart=[{'service':'postgresql',	'enable':False,	'functions':['system']},
-					{'service':'hostapd',		'enable':False, 'functions':['system','bridge']},
-					{'service':'dncpd',			'enable':False, 'functions':['system','bridge']},
+List_functions= 		['system', 'bridge', 'routed_by']
+local_files_totransfer=[{'file':'pg_hba.conf', 		'target':'/etc/postgresql/11/main',	'owner_change':'file', 	'function':'system'},
+						{'file':'postgresql.conf', 	'target':'/etc/postgresql/11/main',	'owner_change':'file', 	'function':'system'},
+						{'file':'rc.local', 		'target':'/etc',					'owner_change':'file', 	'function':'system'},
+						{'file':'hostapd.conf', 	'target':'/etc/hostapd',			'owner_change':'dir', 	'function':'bridge'},
+						{'file':'hostapd', 			'target':'/etc/default',			'owner_change':'file', 	'function':'bridge'},
+						{'file':'hostapd.accept', 	'target':'/etc/hostapd',			'owner_change':'dir', 	'function':'bridge'},
+						{'file':'interfaces', 		'target':'/etc/network',			'owner_change':'file', 	'function':'bridge'},
+						{'file':'sysctl.conf', 		'target':'/etc',					'owner_change':'file', 	'function':'bridge'},
+						{'file':'wpa_supplicant.conf','target':'/etc/wpa_supplicant',	'owner_change':'file', 	'function':'routed_by'},]
+services_torestart=[{'service':'postgresql',	'enable':False,	'function':'system'},
+					{'service':'hostapd',		'enable':False, 'function':'bridge'},
+					{'service':'dncpd',			'enable':False, 'function':'bridge'},
 					]
 
 Target={"method":0,
-		"os":None,"host":None,"cpu":None,"bridge":None,"system":None,'network':None,
+		"os":None,"host":None,"cpu":None,"bridge":None,"system":None,'network':None,"routed_by":None,
 		'cur_cpu':None,'cur_host_net':None, 
 		"user":None,'ipv4':None,'password':None,
 		"ssh":None}
@@ -70,67 +72,56 @@ class Command(BaseCommand):
 		parser.add_argument('-t', dest='no_down', action='store_true')
 		parser.add_argument('-u', dest='no_update', action='store_true')
 	def handle(self, *args, **options):
-		Processus_OK = step_proceed(initialization,"Initialisation",0, **options)
+		Processus_OK = step_proceed(initialization,"Processus initialization",0, **options)
 		if Processus_OK: Processus_OK = step_proceed(select_config_mode,"Choix de la méthode de configuration",1, **options)
 		if Processus_OK: Processus_OK = step_proceed(get_target,"Contrôle des détails de la cible",2, **options)
 		if Processus_OK and not options['no_down']: Processus_OK = step_proceed(net_downloads,"Téléchargement des paquets nécessaires",3, **options)
 		if Processus_OK: Processus_OK = step_proceed(ssh_configuration,"Configuration du ssh",5, **options)
-		if Processus_OK: Processus_OK = step_proceed(files_transfert,"Transfert des fichiers de configuration",6, **options)			
+		if Processus_OK: Processus_OK = step_proceed(files_transfert,"Configuration files transfer",6, **options)
+		if Processus_OK: Processus_OK = step_proceed(host_initialization,"Host initialization",7, **options)		
 		#if Processus_OK: Processus_OK = step_proceed(git_pull,"Git Pull",6, **options)
-
-def step_proceed(function, title, step, **options):
-	txt_Step(title, step)
-	STEP_OK=function(**options)	
-	if not STEP_OK: txt_StepFailed(step)
-	print()
-	return STEP_OK
-
-def initialization(**options):
-	def make_local_files_executable():
-		txt_Proceed("Local files management")
-		step_ok = True
-		for myfile in local_files_toexecute:
-			if step_ok : step_ok = subprocess.call(['{}/make_local_files_executable.sh'.format(Path_bash), '{}/{}'.format(Path_bash,myfile)])
-		if step_ok:
-			txt_OK()
-			return True
-		else:
-			txt_NOK("file {} is missing".format(myfile))
+		
+def host_initialization(**options):
+	def update_postgresql():
+		txt_Proceed('start postgresql')
+		stdin, stdout, stderr = Target['ssh'].Client.exec_command('sudo chown -R postgres /etc/postgresql/11/main/')
+		stdout.channel.recv_exit_status()
+		stdin, stdout, stderr = Target['ssh'].Client.exec_command('sudo systemctl restart postgresql')
+		stdout.channel.recv_exit_status()
+		if not [i for i in stderr.readlines()]==[]:
+			txt_NOK('failed to restart postgresql')
 			return False
-	def sshkey_activation():		
-		txt_Proceed("activation de la clé ssh via clef cryptée")
-		stdexit = subprocess.call(['{}/start_ssh.sh'.format(Path_bash), '-e'])
-		if not stdexit :
-			txt_OK()
-			return True
-		else:
-			txt_NOK()
+			
+		stdin, stdout, stderr = Target['ssh'].Client.exec_command('psql -U postgres -c "ALTER ROLE postgres WITH PASSWORD \'@Crown4884Postgres\';"')
+		stdout.channel.recv_exit_status()
+		if not [i for i in stderr.readlines()]==[]:
+			txt_NOK('failed to update postgres password')
 			return False
-	def check_internet_connect():
-		txt_Proceed("Check Internet access")
-		if not subprocess.call('{}/check_internet.sh'.format(Path_bash)): 
-			txt_OK()
-			return True
-		else:
-			txt_NOK("internet connexion required")
-			return False
-	def pull_git():
-		txt_Proceed("Git pull")
-		stdexit = subprocess.call(['{}/git_pull.sh'.format(Path_bash)])
-		if not stdexit :
-			txt_OK()
-			return True
-		else:
-			txt_NOK()
-			return False
-		return True	
-	step_ok = True
-	
-	
-	Step_OK : Step_OK= make_local_files_executable()
-	if Step_OK : Step_OK= sshkey_activation()
-	if Step_OK and not (options['no_down'] and options['no_update']): Step_OK= check_internet_connect()
-	if Step_OK and not options['no_update']: Step_OK= pull_git()
+			
+		stdin, stdout, stderr = Target['ssh'].Client.exec_command('psql -U postgres -c "CREATE DATABASE crown;"')
+		stdout.channel.recv_exit_status()
+		if not [i for i in stderr.readlines()]==[]:
+			stdin, stdout, stderr = Target['ssh'].Client.exec_command('psql -U postgres -c "DROP DATABASE crown;"')
+			stdout.channel.recv_exit_status()
+			stdin, stdout, stderr = Target['ssh'].Client.exec_command('psql -U postgres -c "CREATE DATABASE crown;"')
+			stdout.channel.recv_exit_status()
+			if not [i for i in stderr.readlines()]==[]:
+				txt_NOK('failed to create database crown')
+				return False
+		txt_OK()
+		return True
+	def git_clone():
+		txt_Proceed('git clone')
+		start_ssh_command="eval $(ssh-agent -s); { sleep .1; echo " + Target["ssh_passwd"] + "; } | script -q /dev/null -c 'ssh-add .ssh/id_rsa'"
+		stdin, stdout, stderr = Target['ssh'].Client.exec_command(start_ssh_command + "; printf \"yes\" | sudo git clone rtu@192.168.1.29:IOT_System/.git")
+		stdout.channel.recv_exit_status()
+		print(stdout.readlines())
+		print(stderr.readlines())
+		return False
+		
+	Step_OK=True
+	if Step_OK : Step_OK = update_postgresql()
+	if Step_OK : Step_OK = git_clone()
 	return Step_OK
 	
 def files_transfert(**options):		
@@ -140,7 +131,7 @@ def files_transfert(**options):
 		
 		for funct in List_to_transfer:
 			for myfile in local_files_totransfer:
-				if funct in myfile['functions']:
+				if funct == myfile['function']:
 					if step_ok: step_ok = subprocess.run(['sudo', 'cp', '{}/{}.sav'.format(Path_files,myfile['file']), '{}/{}'.format(Path_files,myfile['file'])])
 					if step_ok: step_ok = subprocess.run(['sudo', 'chmod', '777', '{}/{}'.format(Path_files,myfile['file'])])
 					if not step_ok: 
@@ -178,20 +169,24 @@ def files_transfert(**options):
 		else:
 			txt_NOK
 			return False
+	def wpa_supplicant_conf():
+		txt_Proceed("update wpa_supllicant config")
+		wpa_supplicant_conf_add=[ 	"network={",
+									"ssid={}".format(str.capitalize(Target['routed_by']['hostname'])),
+									"psk=@{}4884{}".format(str.capitalize(Target['user'].username),str.capitalize(Target['routed_by']['hostname']))]
+		
 	def files_transfer():
 		txt_Proceed("files transfer")
 		for funct in List_to_transfer:
 			for myfile in local_files_totransfer:
-				if funct in myfile['functions']:
+				if funct == myfile['function']:
 					try:
 						if myfile['owner_change']=='file' : 
 							stdin, stdout, stderr = Target['ssh'].Client.exec_command("sudo chown -R {} {}/{}".format(Target['user'].username,myfile['target'],myfile['file']))
 						elif myfile['owner_change']=='dir': 
 							stdin, stdout, stderr = Target['ssh'].Client.exec_command("sudo chown -R {} {}".format(Target['user'].username,myfile['target']))
 						stdout.channel.recv_exit_status()
-						print(myfile['file'])
 						Target['ssh'].ftp_Client.put('{}/{}'.format(Path_files,myfile['file']),'{}/{}'.format(myfile['target'],myfile['file']))
-						print(myfile['file'])
 					except:
 						txt_NOK(myfile['file'])
 						return False
@@ -202,26 +197,24 @@ def files_transfert(**options):
 		
 		for funct in List_to_transfer:
 			for myfile in local_files_totransfer:
-				if funct in myfile['functions']:
-					subprocess.run(['sudo', 'rm', '{}/{}'.format(Path_files,myfile)])
+				if funct == myfile['function']:
+					subprocess.run(['sudo', 'rm', '{}/{}'.format(Path_files,myfile['file'])])
 		txt_OK()
 		return True
 	
-	List_to_transfer=['system']
-	if Target['bridge']: List_to_transfer.append('bridge')
+	
+	List_to_transfer=[]
+	for func in List_functions:
+		if Target[func]: List_to_transfer.append(func)
 	
 	Step_OK=True
 	if Step_OK : Step_OK = copy_sav()
-	time.sleep(1)
-	if Step_OK : Step_OK = hostapd_conf()
+	if Step_OK and Target['bridge']: Step_OK = hostapd_conf()
+	if Step_OK and Target['routed_by']: Step_OK = wpa_supplicant_conf()
 	if Step_OK : Step_OK = files_transfer()
-	#if Step_OK : Step_OK = copy_remove()
+	if Step_OK : Step_OK = copy_remove()
 	return Step_OK
 	
-def git_push(**options):
-	
-	return True
-
 def ssh_configuration(**options):
 	def ssh_passwd():
 		txt_Proceed("génération du mot de passe")
@@ -233,8 +226,7 @@ def ssh_configuration(**options):
 		else:
 			Target["ssh_passwd"] = stdout.readlines()[0][:-1]
 			txt_OK()
-			return True
-		
+			return True		
 	def ssh_keygen():
 		txt_Proceed("génération de la clé ssh")
 		command = 'printf "\n'
@@ -249,12 +241,23 @@ def ssh_configuration(**options):
 			txt_OK()
 			stdin, stdout, stderr = Target['ssh'].Client.exec_command("echo $(cat .ssh/id_rsa.pub)")
 			stdout.channel.recv_exit_status()
-			Target["ssh_pub"] = stdout.readlines()[0][-1]
+			Target["ssh_pub"] = stdout.readlines()[0][:-1]
 			return True
 		else:
 			txt_NOK()
 			return False
-			
+	def ssh_add():
+		txt_Proceed("demarrage du ssh-agent")
+		stdin, stdout, stderr = Target['ssh'].Client.exec_command("eval $(ssh-agent -s); { sleep .1; echo " + Target["ssh_passwd"] + "; } | script -q /dev/null -c 'ssh-add .ssh/id_rsa' ")
+		stdout.channel.recv_exit_status()
+		try:
+			if 'Identity added' in stdout.readlines()[1]:
+				txt_OK()
+				return True
+		except:
+			pass
+		txt_NOK('failed test to add ssh key to agent')
+		return False		
 	def ssh_autorized():
 		txt_Proceed("ssh_keys authorized update")
 		stdin, stdout, stderr = Target['ssh'].Client.exec_command("touch .ssh/authorized_keys")
@@ -265,16 +268,19 @@ def ssh_configuration(**options):
 			return True
 		except:
 			txt_NOK()
-			return False
-		
+			return False	
 	def ssh_management():
 		txt_Proceed("Management du ssh")
+		with open ('{}/.ssh/authorized_keys'.format(root_path), 'w') as auth_file:
+			auth_file.write(Target['ssh_pub'])
+			auth_file.close()
 		txt_Todo()
 		return True
 			
 	Step_OK=True
 	if Step_OK : Step_OK = ssh_passwd()
 	if Step_OK : Step_OK = ssh_keygen()
+	if Step_OK : Step_OK = ssh_add()
 	if Step_OK : Step_OK = ssh_autorized()
 	if Step_OK : Step_OK = ssh_management()
 	
@@ -306,7 +312,7 @@ def net_downloads(**options):
 			
 	Step_OK=True
 
-	if Step_OK: Step_OK = run_check("Packages Updates",'echo "O" | sudo apt-get update', 5)
+	if Step_OK: Step_OK = run_check("Packages Updates",'echo "O" | sudo apt-get update', 30)
 	for pack,timeout in apt_packages.items():
 		if Step_OK: Step_OK = run_check("Install {}".format(pack),'echo "O" | sudo apt-get -y install {}'.format(pack), timeout, software=(pack,"apt",True))
 	
@@ -321,22 +327,6 @@ def net_downloads(**options):
 	
 			
 	return Step_OK
-	'''
-	#subprocess.call(['{}/mymake.sh'.format(Path_bash)])
-	stdin, stdout, stderr = ssh.Client.exec_command('echo "O" | sudo apt-get install git jq; touch ssh_done')
-	for i in range(20):
-		print(i, stdout.channel.exit_status)
-		time.sleep(1)
-	stdout.channel.recv_exit_status()
-			
-	stdin, stdout, sterr = ssh.Client.exec_command('sudo rm ssh_done & echo "OK"')
-	print('nok')
-	stdout.channel.recv_exit_status()
-	for line in sterr.readlines():
-		print(line)
-	for line in stdout.readlines():
-		print(line)
-	'''
 	
 def get_target(**options):
 	class SSH_Connection():
@@ -381,7 +371,7 @@ def get_target(**options):
 			txt_NOK("There is no CPU configured with this os")
 			return False
 		else:
-			host_activ=Host.objects.using('system').filter(os = Target["os"], activ=True)
+			host_activ=Host.objects.using('system').filter(os = Target["os"], activ=True).distinct()
 			if len(host_activ)==0: 
 				txt_NOK("There is no activ Host configured with this os")
 				return False
@@ -409,8 +399,13 @@ def get_target(**options):
 				txt_NOK("No activ system linked to this CPU")
 				return False
 			elif len(host_net_activ)>1:
-				txt_NOK("several activ systems linked to this CPU")
-				return False
+				first_system = host_net_activ[0].network.system
+				for host_net in host_net_activ:
+					if host_net.network.system != first_system:
+						txt_NOK("several activ systems linked to this CPU")
+						return False
+				txt_OK()
+				Target['system']=first_system
 			else:
 				txt_OK()
 				Target['system']=host_net_activ[0].network.system 
@@ -427,7 +422,6 @@ def get_target(**options):
 			txt_subtitle1("netcard {}".format(netcard.detail))
 			for key, value in netcard.__dict__.items():
 				txt_Dict(key, value)
-			
 			bridged_hosts = Host_Network.objects.using('system').filter(routed_by=netcard, network__system=Target['system'])
 			if len(bridged_hosts)>0: 	
 				txt_Dict("Bridge","\033[92mYES\033[m")
@@ -439,16 +433,39 @@ def get_target(**options):
 				txt_subtitle2("activ network associated")
 				host_net = Host_Network.objects.using('system').filter(networkcard=netcard)
 				if len(host_net)==0: 
-					txt_Warning("There is no network connection configured")
+					txt_NOK("There is no network connection configured")
+					return False
 				else:	
 					host_net_activ = Host_Network.objects.using('system').filter(networkcard=netcard, network__system__activ=True)
-					if len(host_net_activ)==0: txt_Warning("Missing connection to activ System")
-					elif len(host_net_activ)>1 : txt_Warning("Strange, you shouldn't get several activ connection, make sure ther not several system activ")
+					if len(host_net_activ)==0: 
+						txt_NOK("Missing connection to activ System")
+						return False
+					elif len(host_net_activ)>1 : 
+						txt_NOK("Strange, you shouldn't get several activ connection, make sure there is just one system activ")
+						return False
 					else:
 						host_net_activ=host_net_activ[0]
+							
+						
 						txt_Dict("System",host_net_activ.network.system.desi)
 						txt_Dict("Network",host_net_activ.network.desi)
 						host_network_temp=host_net_activ
+						
+						if host_net_activ.routed_by:
+							Target['routed_by'] = {"cpu_netcard":host_net_activ.routed_by}
+							rout_cpu = Target['routed_by']["cpu_netcard"].cpu
+							rout_hosts = Host.objects.using('system').filter(cpu=rout_cpu, activ=True)
+							if len(rout_hosts)==0: 
+								txt_NOK("cpu's router doesn't exist")
+								return False
+							elif len(rout_hosts)>1: 
+								txt_NOK("too many host activ used this cpu")
+								return False
+							else:
+								Target['routed_by']['hostname']=rout_hosts[0].os.hostname
+							return False
+							
+							
 						for key, value in host_net_activ.__dict__.items(): txt_Dict(key, value)
 			else:
 				for b_host in bridged_hosts:
@@ -563,6 +580,61 @@ def select_config_mode(**options):
 	Target["method"]=Select(select_List, "Method")
 	if Target["method"]=="exit":return False
 	return True	
+
+def initialization(**options):
+	def make_local_files_executable():
+		txt_Proceed("Local files management")
+		step_ok = True
+		for myfile in local_files_toexecute:
+			if step_ok : step_ok = subprocess.call(['{}/make_local_files_executable.sh'.format(Path_bash), '{}/{}'.format(Path_bash,myfile)])
+		if step_ok:
+			txt_OK()
+			return True
+		else:
+			txt_NOK("file {} is missing".format(myfile))
+			return False
+	def sshkey_activation():		
+		txt_Proceed("activation de la clé ssh via clef cryptée")
+		stdexit = subprocess.call(['{}/start_ssh.sh'.format(Path_bash), '-e'])
+		if not stdexit :
+			txt_OK()
+			return True
+		else:
+			txt_NOK()
+			return False
+	def check_internet_connect():
+		txt_Proceed("Check Internet access")
+		if not subprocess.call('{}/check_internet.sh'.format(Path_bash)): 
+			txt_OK()
+			return True
+		else:
+			txt_NOK("internet connexion required")
+			return False
+	def pull_git():
+		txt_Proceed("Git pull")
+		stdexit = subprocess.call(['{}/git_pull.sh'.format(Path_bash)])
+		if not stdexit :
+			txt_OK()
+			return True
+		else:
+			txt_NOK()
+			return False
+		return True	
+	step_ok = True
+	
+	
+	Step_OK : Step_OK= make_local_files_executable()
+	if Step_OK : Step_OK= sshkey_activation()
+	if Step_OK and not (options['no_down'] and options['no_update']): Step_OK= check_internet_connect()
+	if Step_OK and not options['no_update']: Step_OK= pull_git()
+	return Step_OK
+
+def step_proceed(function, title, step, **options):
+	txt_Step(title, step)
+	STEP_OK=function(**options)	
+	if not STEP_OK: txt_StepFailed(step)
+	print()
+	return STEP_OK
 
 def add_lines(lines,myfile):
 	step_ok = True

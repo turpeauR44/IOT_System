@@ -47,7 +47,13 @@ done
 # Execution
 ############################
 id_add=$(ssh-add -l | grep SHA256 | grep "$HOSTNAME")
-if [ -n "$id_add" ]; then exit 0 ; fi
+if [ -n "$id_add" ]; then exit 0 ; 
+else
+	if [ $exit_requested -eq 1 ]; then
+		echo -e "\e[0;31m ssh-agent requested \n\e[0;m try : $0"
+		exit 1
+	fi
+fi
 
 # Close current ext_keys decrypt
 sudo cryptsetup luksClose ext_keys > /dev/null 2>&1
@@ -68,7 +74,4 @@ sync
 eval $(ssh-agent -s)  > /dev/null 2>&1
 { sleep .1; echo $ssh_key; } | script -q /dev/null -c 'ssh-add .ssh/id_rsa' > /dev/null 2>&1
 id_add=$(ssh-add -l | grep SHA256 | grep "$HOSTNAME")
-
-if [ $exit_requested -eq 1 ]; then
-	if [ -n "$id_add" ]; then exit 0 ; else exit 1; fi
-fi
+if [ -n "$id_add" ]; then echo "identity added" ; else "fail to add ssh identity"; fi

@@ -103,7 +103,7 @@ class NetworkCardAdmin (SystemModelAdmin):
 		model = Host_Network
 		fk_name = 'networkcard'
 		show_change_link = True
-		fields=('network',('IPv4','netmask','broadcast'), 'routed_by')	
+		fields=('network','IPv4', 'routed_by')	
 		extra = 0
 	inlines = [Host_NetworkInLine, ]
 
