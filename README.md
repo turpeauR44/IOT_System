@@ -22,10 +22,19 @@
     sudo adduser myUser
     sudo adduser myUser sudo
     ```
-    2.4. Restart as myUser
-    
-    2.5. Delete pi user 
+    Temporarly allow to run sudo without password
+    edit /etc/sudoers last row
+    ```bash
+    <myUser> ALL=(ALL) NOPASSWD:ALL
+    ```
+    2.4. Restart as myUser & Delete pi user 
     ```bash
     sudo deluser pi
     ```
+3. Execution de l'initialisation
+    3.1. Clone du fichier
+
+    3.2 Execution du fichier step by step ou complète
+
+
     
